@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<html><head>
+  <meta charset="UTF-8">
+  <title>A Traveller's Website</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <script src="OES_texture_float_linear-polyfill.js"></script>
+  <script src="lightgl.js"></script>
+  <script src="cubemap.js"></script>
+  <script src="renderer.js"></script>
+  <script src="water.js"></script>
+  <script src="main.js"></script>
+  <style type="text/css">
+    a { color: inherit; cursor: pointer; }
+    img { display: none; }
+    ul { padding: 0 0 0 20px; }
+    small { display: block; font-size: 11px; line-height: 15px; }
+    canvas { position: absolute; top: 0; left: 0; z-index: -100; }
+    #help { position: absolute; top: 0; right: 0; bottom: 0; width: 280px; }
+    #loading { position: absolute; left: 0; top: 50%; right: 300px; text-align: center; margin-top: -8px; }
+    @media (max-width: 600px) {
+      small { font-size: 8px; line-height: 10px; }
+      #help { width: 100px; font-size: 10px; line-height: 12px; }
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head><body>
+	<header>
+        <h2>Estraie: A Disciple of Focalors</h2>
+        <p>The world opens itself before those with noble hearts.</p>
+  </header>
+  
+  <!--
+	<section class="content left-align" id="section1">
+        <div class="background-image" style="background-image: url('1.jpg');"></div>
+  </section>
+  -->
+  
+  <div class="sidebar"></div>
+  
+  <section class="content left-align" id="section1">
+        <div class="background-image" style="background-image: url('1.jpg');"></div>
+        <div class="text-overlay">
+            <h2>关于我</h2>
+            <p>李乐平</p>
+            <p>个人邮箱: li_leping@qq.com</p>
+            <p>学校邮箱: 12112627@mail.sustech.edu.cn</p>
+            <p>Github: <a href="https://github.com/Estraie" id="githubLink">Estraie</a></p>
+            <p>QQ: 1477486313</p>
+            <p></p>
+            <p></p>
+            <p>Tip: 滑动滚轮翻页</p>
+        </div>
+  </section>
+  
+  <div id="loading">Loading...</div>
+  <div id="help">
+  	
+  <section class="content left-align" id="section2">
+        <div class="background-image" style="background-image: url('2.jpg');"></div>
+        <div class="text-overlay">
+		  <h2>About Me</h2>
+            <p>Verily, I have not bethought myself of aught worthy to inscribe.</p>
+            <p>E-mail (personal): li_leping@qq.com</p>
+            <p>E-mail (institute): 12112627@mail.sustech.edu.cn</p>
+            <p>QQ: 1477486313</p>
+        </div>
+    </section>
+
+    <section class="content left-align" id="section3">
+        <div class="background-image" style="background-image: url('3.jpg');"></div>
+        <div class="text-overlay">
+            
+            <h2>Advertisement for Rent</h2>
+        </div>
+    </section>
+    
+    <section class="content left-align" id="section4">
+        <div class="background-image" style="background-image: url('4.jpg');"></div>
+        <div class="text-overlay">
+            <!-- Add content for section 4 -->
+        </div>
+    </section>
+    <!--
+    <section class="content left-align" id="section7">
+        <div class="background-image" style="background-image: url('7.jpg');"></div>
+        <div class="text-overlay">
+
+        </div>
+    </section>
+    
+    <section class="content left-align" id="section9">
+        <div class="background-image" style="background-image: url('9.jpg');"></div>
+        <div class="text-overlay">
+            
+        </div>
+    </section>
+    -->
+
+    <footer>
+        <p>For memories are like pearls - tossed about by wind and sand though they may be, their true, pure color shall never be changed.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+  </div>
+  <img id="tiles" src="white.png">
+  <img id="xneg" src="xneg.png">
+  <img id="xpos" src="xpos.png">
+  <img id="ypos" src="ypos.png">
+  <img id="zneg" src="zneg.png">
+  <img id="zpos" src="zpos.png">
+</body></html>
