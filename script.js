@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 textOverlay.style.transform = "translateY(5%)";
             }
         });
-        
-//        if(currentSectionIndex === 0){
-//        	  document.getElementById('githubLink').style.pointerEvents = 'auto';
-//        } else {
-//        	  document.getElementById('githubLink').style.pointerEvents = 'none';
-//        }
-        
+
+        if(currentSectionIndex === 0){
+        	  document.getElementById('githubLink').style.pointerEvents = 'auto';
+        } else {
+        	  document.getElementById('githubLink').style.pointerEvents = 'none';
+        }
+
         if(currentSectionIndex >= 3) {
         	  sidebar.style.opacity = 0;
         	  sidebar.style.visibility = "hidden";
@@ -173,6 +173,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		        }
 		    }
 		})();
- */   
+ */
 });
 

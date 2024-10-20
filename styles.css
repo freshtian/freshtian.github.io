@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'HYWenHei-85W'; 
-    src: url('zh-cn-pruned.ttf') format('truetype'); 
+    src: url('zh-cn_pruned.ttf') format('truetype'); 
 }
 
 body {
@@ -98,7 +98,7 @@ footer {
     top: 25%;
     left: 10%;
     height: 60%;
-    width: 40%; 
+    width: 80%; 
     background-color: rgba(135, 206, 250, 0.7); 
     border-radius: 15px; /* 圆角半径 */
     z-index: 1; 
