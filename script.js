@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 textOverlay.style.transform = "translateY(0%)";
                 */
                 //section.style.opacity = 1;
-                textOverlay.style.opacity = 1;
+                textOverlay.style.opacity = 0.9;
                 textOverlay.style.visibility = 'visible';
                 textOverlay.style.transform = "translateY(0%)";
                 /*if(content != null){

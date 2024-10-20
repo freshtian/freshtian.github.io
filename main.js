@@ -9,11 +9,11 @@ function handleError(text) {
     <a href="https://get.webgl.org/get-a-webgl-implementation/">\
     Getting a WebGL Implementation</a>.';
   }
-  
+
   var loading = document.getElementById('loading');
   loading.innerHTML = html;
   loading.style.zIndex = 1;
-  
+
 }
 
 window.onerror = handleError;
@@ -84,9 +84,9 @@ window.onload = function() {
     water.addDrop(Math.random() * 2 - 1, Math.random() * 2 - 1, 0.03, (i & 1) ? 0.01 : -0.01);
   }*/
 
-	
+
   document.getElementById('loading').innerHTML = '';
-  
+
   onresize();
 
   var requestAnimationFrame =
@@ -179,7 +179,8 @@ window.onload = function() {
   }
 
   function isHelpElement(element) {
-    return element === help || element.parentNode && isHelpElement(element.parentNode);
+    //return element === help || element.parentNode && isHelpElement(element.parentNode);
+    return false;
   }
 
   document.onmousedown = function(e) {
