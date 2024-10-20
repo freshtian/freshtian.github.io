@@ -35,26 +35,49 @@ document.addEventListener('DOMContentLoaded', function () {
         sections.forEach((section, index) => {
             const background = section.querySelector('.background-image');
             const textOverlay = section.querySelector('.text-overlay');
-            const content = section.querySelector('.content');
+            //const content = section.querySelector('.content');
 
             if (index === currentSectionIndex) {
                 background.style.opacity = 0.9;
+                /*
                 textOverlay.style.opacity = 1;
                 textOverlay.style.visibility = 'visible';
                 textOverlay.style.transform = "translateY(0%)";
+                */
+                //section.style.opacity = 1;
+                textOverlay.style.opacity = 1;
+                textOverlay.style.visibility = 'visible';
+                textOverlay.style.transform = "translateY(0%)";
+                /*if(content != null){
+                	content.style.opacity = 1;
+                	content.style.visibility = 'visible';
+                	content.style.transform = "translateY(0%)";
+              	}*/
             } else {
                 background.style.opacity = 0;
+                /*
                 textOverlay.style.opacity = 0;
-                textOverlay.style.visibility = 'visible';
+                textOverlay.style.visibility = 'hidden';
                 textOverlay.style.transform = "translateY(5%)";
+                */
+                //section.style.opacity = 0;
+                textOverlay.style.opacity = 0;
+                textOverlay.style.visibility = 'hidden';
+                textOverlay.style.transform = "translateY(5%)";
+                /*if(content != null){
+                	content.style.opacity = 0;
+                	content.style.visibility = 'hidden';
+                	content.style.transform = "translateY(5%)";
+                }*/
             }
         });
-
+				/*
         if(currentSectionIndex === 0){
         	  document.getElementById('githubLink').style.pointerEvents = 'auto';
         } else {
         	  document.getElementById('githubLink').style.pointerEvents = 'none';
         }
+        */
 
         if(currentSectionIndex >= 3) {
         	  sidebar.style.opacity = 0;

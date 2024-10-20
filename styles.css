@@ -46,6 +46,7 @@ footer {
     color: #fff;
     text-align: center;
     overflow: hidden;
+    transition: opacity 1s ease, visibility 1s ease, transform 1s ease; 
 }
 
 .background-image {
