@@ -43,7 +43,7 @@
         <div class="background-image" style="background-image: url('1.jpg');"></div>
         <div class="text-overlay">
             <h2>关于我</h2>
-            <p>李乐平 | li_leping@qq.com | Github: <a href="https://github.com/Estraie" id="githubLink">Estraie</a> | 广东省深圳市学苑大道1088号</p>
+            <p>李乐平 | <a id="email">li_leping@qq.com</a> | Github: <a href="https://github.com/Estraie" id="githubLink">Estraie</a> | 广东省深圳市学苑大道1088号</p>
             <p>2021 - 2025 南方科技大学，统计与数据科学系，理学学士（预期）</p>
             <p>2025 - 2028 南开大学，计算机科学与技术系，工学硕士（预期）</p>
             <p>Tip: 滑动滚轮翻页</p>
@@ -57,7 +57,7 @@
         <div class="background-image" style="background-image: url('2.jpg');"></div>
         <div class="text-overlay">
 		    		<h2>About Me</h2>
-            <p>LI Leping | li_leping@qq.com | 1088 Xueyuan Blvd., Shenzhen, Guangdong, China</p>
+            <p>LI Leping | <a id="email">li_leping@qq.com</a> | 1088 Xueyuan Blvd., Shenzhen, Guangdong, China</p>
             <p>2021 - 2025 B.S. in Data Science and Big Data Technology, SUSTech (Expected)</p>
             <p>2025 - 2028 M.E. in Computer Science and Technology, Nankai University (Expected)</p>
             <p></p>
@@ -108,3 +108,18 @@
   <img id="zneg" src="zneg.png">
   <img id="zpos" src="zpos.png">
 </body></html>
+
+<script>
+    const emailElement = document.getElementById('email');
+
+    emailElement.addEventListener('click', function () {
+        const tempInput = document.createElement('input');
+        tempInput.value = emailElement.innerText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        alert('Email has been copied to clipboard!');
+    });
+</script>

@@ -85,6 +85,16 @@ footer {
     visibility: visible;
 }
 
+#section1 .text-overlay p:first-of-type {
+    text-align: center;
+}
+
+
+#section2 .text-overlay p:first-of-type {
+    text-align: center;
+}
+
+
 #github-link {
     pointer-events: auto;
 }
