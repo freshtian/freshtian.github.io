@@ -24,12 +24,63 @@
             #help { width: 100px; font-size: 10px; line-height: 12px; }
         }
     </style>
-    <link rel="stylesheet" href="asset/css/styles.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'LoaderFont';
+            src: url('resource/font/en-us.ttf') format('truetype');
+        }
+
+        #loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #3498db;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        #loading-text {
+            font-family: 'LoaderFont';
+            font-size: 1.5rem;
+            background: linear-gradient(to right, white 0%, #2980b9 0%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 1.5s ease, top 1.5s ease, left 1.5s ease, font-size 1.5s ease;   
+        }
+
+        #loading-text.moved {
+            font-size: 1rem;
+            top: 30px; 
+            left: 50px; 
+            transform: translate(0, 0); 
+        }
+
+        #loader.fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+    </style>
+    <link rel="preload" href="resource/font/en-us.ttf" as="font" type="font/ttf" crossorigin="anonymous">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
+<div id="loader">
+    <p id="loading-text">The world opens itself before those with noble hearts.</p>
+</div>
 <body>
+    
     <header>
         <div class="header-content">
             <div class="text-content">
@@ -44,12 +95,8 @@
         </div>
     </header>
   
-  <!--
-    <section class="content left-align" id="section1">
-        <div class="background-image" style="background-image: url('1.jpg');"></div>
-  </section>
-  -->
-  
+    <div id="loading"></div>         
+    <!--<div id="help">  </div>-->
     <div class="sidebar"></div>
     <div id = "contentArea">
         <div id = "mainContent">
@@ -63,9 +110,6 @@
                     <p>Tip: 滑动滚轮翻页</p>
                 </div>
             </section>
-        
-            <div id="loading">Loading...</div>
-            <!--<div id="help">  </div>-->
             
             <section class="content left-align" id="section2">
                 <div class="background-image" style="background-image: url('img/bg/2.jpg');"></div>

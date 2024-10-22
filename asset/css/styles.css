@@ -20,7 +20,7 @@ header {
     position: fixed;
     width: 100%;
     opacity: 1;
-    transition: opacity 1s ease, visibility 1s ease, transform 1s ease;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
 }
 
 button {
@@ -31,7 +31,7 @@ button {
     position: relative;
     z-index: 100;
     margin: 0px 50px 0px 5px;
-    transition: background-color 1s ease, opacity 1s ease, visibility 1s ease, transform 1s ease; 
+    transition: background-color 0.8s ease, opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease; 
 }
 
 button:hover {
@@ -69,7 +69,7 @@ footer {
     left:0;
     width: 100%;
     opacity: 1;
-    transition: opacity 1s ease, visibility 1s ease, transform 1s ease;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
 }
 
 .content {
@@ -83,7 +83,7 @@ footer {
     color: #fff;
     text-align: center;
     overflow: hidden;
-    transition: opacity 1s ease, visibility 1s ease, transform 1s ease; 
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease; 
 }
 
 .background-image {
@@ -96,14 +96,14 @@ footer {
     background-position: center;
     z-index: -50; 
     opacity: 0; 
-    transition: opacity 1s ease, visibility 1s ease, transform 1s ease; 
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease; 
 }
 
 .text-overlay {
     z-index: 200; 
     opacity: 0; 
     visibility: hidden; 
-    transition: visibility 1s ease, transform 1s ease; 
+    transition: visibility 0.8s ease, transform 0.8s ease; 
     position: fixed;
     top: 25%;
     left: 15%;
@@ -150,7 +150,7 @@ footer {
     border-radius: 15px; /* 圆角半径 */
     visibility: "visible";
     opacity: 1;
-    transition: opacity 1s ease, visibility 1s ease, transform 1s ease;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
 }
 
 .left-align p {

@@ -1,6 +1,24 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    const loader = document.getElementById("loader");
+    const loadingText = document.getElementById("loading-text");
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += 1;
+        loadingText.style.setProperty('background', `linear-gradient(to right, white ${progress}%, #2980b9 ${progress}%)`);
+        loadingText.style.setProperty('-webkit-background-clip', 'text');
+        loadingText.style.setProperty('background-clip', 'text');
+        loadingText.style.setProperty('color', 'transparent');
+        if (progress >= 100) {
+            clearInterval(interval);
+            loadingText.classList.add('moved');
+        }
+    }, 60);
+
+
     const contentArea = document.getElementById('contentArea');
     const allDivs = contentArea.children;
     const contents = {
@@ -12,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentContentKey = 'mainContent';
     let currentSectionIndex = 0;
     let isTransitioning = false;
+    let timeout;
+    let timeoutSession;
 
     document.getElementById('mainButton').addEventListener('click', () => switchContent('mainContent'));
     document.getElementById('reminiscenceButton').addEventListener('click', () => switchContent('reminiscenceContent'));
@@ -21,43 +41,80 @@ document.addEventListener('DOMContentLoaded', function () {
         content.forEach((section) => {
             section.addEventListener('transitionend', () => {
                 isTransitioning = false;
+                // console.log(section.id + " transition ended");
+            });
+            section.addEventListener('transitionstart', () => {
+                isTransitioning = true;
+                // console.log(section.id + " transition started");
             });
         });
     });
 
-    function updateContent() {
-        const sections = contents[currentContentKey];
-        isTransitioning = true;
+    function updateContent(nextKey) {
+        // console.log("Next key: " + nextKey + " Current key: " + currentContentKey);
+        let sections = contents[currentContentKey];
+        // isTransitioning = true;
         const sidebar = document.querySelector('.sidebar');
         const header = document.querySelector('header');
         const footer = document.querySelector('footer');
-        
-        // Object.values(contents).forEach((sectionGroup) => {
-        //     sectionGroup.forEach((section) => {
-        //         section.style.display = 'none'; // 隐藏所有栏目
-        //     });
-        // });
-        Array.from(allDivs).forEach(div => {
-            if (div.id === currentContentKey) {
-                div.style.display = 'block';
-            } else {
-                div.style.display = 'none';
+        let background;
+        let textOverlay;
+        if(nextKey !== currentContentKey){
+            background = sections[currentSectionIndex].querySelector('.background-image');
+            background.zIndex = -51;
+            textOverlay = sections[currentSectionIndex].querySelector('.text-overlay');
+            background.style.opacity = 0;
+            textOverlay.style.opacity = 0;
+            textOverlay.style.visibility = 'hidden';
+            textOverlay.style.transform = "translateY(0%)";
+            if(timeout){
+                console.log("Clearing timeout " + timeout);
+                clearTimeout(timeout);
+                timeout = null;
+                if(timeoutSession){
+                    document.getElementById(timeoutSession).style.display = 'none';
+                    timeoutSession = null;
+                    if(isTransitioning){
+                        isTransitioning = false;
+                    }
+                }
             }
-        });
+            timeoutSession = currentContentKey;
+            timeout = setTimeout(() => {
+                if(timeoutSession){
+                    document.getElementById(timeoutSession).style.display = 'none';
+                    if(isTransitioning){
+                        isTransitioning = false;
+                    }
+                }
+                timeout = null;
+                timeoutSession = null;
+            }, 0);
+            currentContentKey = nextKey;
+            currentSectionIndex = 0;
+            sections = contents[currentContentKey];
+            Array.from(allDivs).forEach(div => {
+                if (div.id === nextKey) {
+                    div.style.display = 'block';
+                } 
+            });
+        }
 
         sections.forEach((section, index) => {
-            const background = section.querySelector('.background-image');
-            const textOverlay = section.querySelector('.text-overlay');
+            background = section.querySelector('.background-image');
+            textOverlay = section.querySelector('.text-overlay');
             if (index === currentSectionIndex) {
+                background.zIndex = -50;
                 background.style.opacity = 0.9;
                 textOverlay.style.opacity = 0.9;
                 textOverlay.style.visibility = 'visible';
                 textOverlay.style.transform = "translateY(0%)";
             } else {
+                background.zIndex = -51;
                 background.style.opacity = 0;
                 textOverlay.style.opacity = 0;
                 textOverlay.style.visibility = 'hidden';
-                textOverlay.style.transform = "translateY(5%)";
+                textOverlay.style.transform = "translateY(0%)";
             }
         });
 
@@ -85,14 +142,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function switchContent(newContentKey) {
-        currentSectionIndex = 0;
-        currentContentKey = newContentKey;
-        updateContent();
-        isTransitioning = false;
+        if (isTransitioning) {
+            console.log("Transitioning");
+            return;
+        }
+        updateContent(newContentKey);
+        // isTransitioning = false;
     }
 
     document.addEventListener('wheel', function (event) {
-        if (isTransitioning) return;
+        if (isTransitioning) {
+            console.log("Transitioning");
+            return;
+        }
 
         const direction = event.deltaY > 0 ? 'down' : 'up';
         const sections = contents[currentContentKey];
@@ -103,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currentSectionIndex--;
         } else return;
 
-        updateContent();
+        updateContent(currentContentKey);
     });
     // setTimeout(() => {
     //     sections.forEach((section, index) => {
