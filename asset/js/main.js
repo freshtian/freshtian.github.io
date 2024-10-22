@@ -38,8 +38,9 @@ var paused = false;
 window.onload = function() {
 
     let loader = document.getElementById("loader");
+    let loadingText = document.getElementById("loading-text");
     let loaded = false;
-    loader.addEventListener('transitionend', function(e){
+    loadingText.addEventListener('transitionend', function(){
         loaded = true;
     });
 
@@ -91,7 +92,7 @@ window.onload = function() {
     }*/
 
     document.getElementById('loading').innerHTML = '';
-    const loadingText = document.getElementById("loading-text");
+
     loadingText.style.setProperty('background', `linear-gradient(to right, white 100%, #3498db 100%)`);
     loadingText.style.setProperty('-webkit-background-clip', 'text');
     loadingText.style.setProperty('background-clip', 'text');
