@@ -84,17 +84,24 @@ window.onload = function() {
         water.addDrop(Math.random() * 2 - 1, Math.random() * 2 - 1, 0.03, (i & 1) ? 0.01 : -0.01);
     }*/
 
-
     document.getElementById('loading').innerHTML = '';
     const loadingText = document.getElementById("loading-text");
     loadingText.style.setProperty('background', `linear-gradient(to right, white 100%, #3498db 100%)`);
     loadingText.style.setProperty('-webkit-background-clip', 'text');
     loadingText.style.setProperty('background-clip', 'text');
     loadingText.style.setProperty('color', 'transparent');
-    document.getElementById("loader").classList.add('fade-out');
+
+    let cumulativeTime = 1500;
+    let loader = document.getElementById("loader");
+    if(loader.classList.contains('moved')){
+        cumulativeTime -= 1500;
+    }
+    setTimeout(() => {
+        document.getElementById("loader").classList.add('fade-out');
+    }, cumulativeTime); 
     setTimeout(() => {
         document.getElementById("loader").style.display = "none";
-    }, 300); 
+    }, cumulativeTime + 300); 
     console.log("WebGL initialized");
 
     onresize();
