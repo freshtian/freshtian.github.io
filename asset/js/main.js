@@ -95,6 +95,8 @@ window.onload = function() {
     let loader = document.getElementById("loader");
     if(loader.classList.contains('moved')){
         cumulativeTime -= 1500;
+    }else{
+        loader.classList.add('moved');
     }
     setTimeout(() => {
         document.getElementById("loader").classList.add('fade-out');
