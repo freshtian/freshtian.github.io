@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     let progress = 0;
     const interval = setInterval(() => {
+        if(loadingText.classList.contains('moved')){
+            clearInterval(interval);
+            return;
+        }
         progress += 1;
         loadingText.style.setProperty('background', `linear-gradient(to right, white ${progress}%, #2980b9 ${progress}%)`);
         loadingText.style.setProperty('-webkit-background-clip', 'text');
