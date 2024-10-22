@@ -37,6 +37,12 @@ var paused = false;
 
 window.onload = function() {
 
+    let loader = document.getElementById("loader");
+    let loaded = false;
+    loader.addEventListener('transitionend', function(e){
+        loaded = true;
+    });
+
     var ratio = window.devicePixelRatio || 1;
     //var help = document.getElementById('help');
 
@@ -92,8 +98,8 @@ window.onload = function() {
     loadingText.style.setProperty('color', 'transparent');
 
     let cumulativeTime = 1500;
-    let loader = document.getElementById("loader");
-    if(loader.classList.contains('moved')){
+    
+    if(loaded){
         cumulativeTime -= 1500;
     }else{
         loader.classList.add('moved');

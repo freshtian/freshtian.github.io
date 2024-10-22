@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const interval = setInterval(() => {
         if(loadingText.classList.contains('moved')){
             clearInterval(interval);
+            progress = 100;
             return;
         }
         progress += 1;
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(interval);
             loadingText.classList.add('moved');
         }
-    }, 60);
+    }, 40);
 
 
     const contentArea = document.getElementById('contentArea');
