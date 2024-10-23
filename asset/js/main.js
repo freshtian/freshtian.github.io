@@ -103,7 +103,7 @@ window.onload = function() {
     if(loaded){
         cumulativeTime -= 1500;
     }else{
-        loader.classList.add('moved');
+        loadingText.classList.add('moved');
     }
     setTimeout(() => {
         document.getElementById("loader").classList.add('fade-out');

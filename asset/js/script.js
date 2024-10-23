@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(interval);
             loadingText.classList.add('moved');
         }
-    }, 40);
+    }, 160);
 
 
     const contentArea = document.getElementById('contentArea');
@@ -148,16 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function switchContent(newContentKey) {
         if (isTransitioning) {
-            console.log("Transitioning");
             return;
         }
         updateContent(newContentKey);
-        // isTransitioning = false;
     }
 
     document.addEventListener('wheel', function (event) {
         if (isTransitioning) {
-            console.log("Transitioning");
             return;
         }
 
