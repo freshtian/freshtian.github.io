@@ -93,6 +93,7 @@
                 <button id="mainButton">Home</button>
                 <button id="reminiscenceButton">Archive</button>
                 <button id="galleryButton">Gallery</button> 
+                <button id="bgmButton" class="music-button">♪</button>
             </div>
         </div>
     </header>
@@ -211,6 +212,7 @@
     </footer>
 
     <script src="asset/js/script.js"></script>
+    <script src="asset/js/music.js"></script>
     <img id="tiles" src="img/white.png">
     <img id="xneg" src="img/xneg.png">
     <img id="xpos" src="img/xpos.png">
@@ -219,6 +221,10 @@
     <img id="zpos" src="img/zpos.png">
 </body>
 </html>
+
+<audio id="backgroundMusic" controls loop>
+    <source src="bgm/To the Crescent Moon's Shimmer.ogg" type="audio/ogg">
+</audio>
 
 <script>
     const emailElements = document.querySelectorAll('.email');

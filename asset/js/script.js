@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(interval);
             loadingText.classList.add('moved');
         }
-    }, 80);
+    }, 60);
 
 
     const contentArea = document.getElementById('contentArea');

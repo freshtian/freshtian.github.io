@@ -36,7 +36,14 @@ header {
     transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
 }
 
+.button-group {
+    align-items: center;
+    justify-content: center;
+}
+
 button {
+    height: 100%;
+    font-family: 'HYWenHei-85W';
     border: none;
     background-color: #3498db;
     color: #fff;
@@ -49,6 +56,26 @@ button {
 
 button:hover {
     background-color: #2980b9;
+}
+
+.music-button {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.8s ease, transform 0.2s;
+}
+
+.playing {
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .header-content {
