@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             progress = 100;
             return;
         }
-        progress += 1;
+        progress += 0.5;
         loadingText.style.setProperty('background', `linear-gradient(to right, white ${progress}%, #2980b9 ${progress}%)`);
         loadingText.style.setProperty('-webkit-background-clip', 'text');
         loadingText.style.setProperty('background-clip', 'text');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(interval);
             loadingText.classList.add('moved');
         }
-    }, 160);
+    }, 80);
 
 
     const contentArea = document.getElementById('contentArea');
@@ -103,8 +103,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     div.style.display = 'block';
                 } 
             });
-        }
+            bgimg = sections[0].querySelector('.background-image');
+            const backgroundImageUrl = bgimg.style.backgroundImage.slice(5, -2);
 
+            const img = new Image();
+            img.src = backgroundImageUrl;
+            console.log(img.src);
+            if (img.complete) {
+                ;
+            } else {
+                const bg = document.getElementById("simple_bg");
+                bg.style.transition = "none";
+                bg.style.opacity = 1;
+                bg.style.visibility = "visible";
+                bg.style.transition = "visibility 0.8s ease, opacity 0.8s ease";
+                img.onload = function() {
+                    bg.style.opacity = 0;
+                    bg.style.visibility = "hidden";
+                };
+            }
+        }
+        
         sections.forEach((section, index) => {
             background = section.querySelector('.background-image');
             textOverlay = section.querySelector('.text-overlay');
@@ -169,6 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         updateContent(currentContentKey);
     });
+
+    
     // setTimeout(() => {
     //     sections.forEach((section, index) => {
     //         const content = section.querySelector('.text-overlay');
