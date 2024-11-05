@@ -69,6 +69,26 @@ button:hover {
     transition: background-color 0.8s ease, transform 0.2s;
 }
 
+.music-info {
+    position: fixed;
+    z-index: 100;
+    right: -400px;
+    top: 12%;
+    width: 300px;
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    /* border-radius: 10px; */
+    box-shadow: 0 4px 8px #2980b9;
+    text-align: left;
+    font-family: 'HYWenHei-85W';
+    transition: transform 1.3s ease;
+}
+
+.slide-in {
+    transform: translateX(-400px);
+}
+
 .playing {
     animation: rotate 10s linear infinite;
 }

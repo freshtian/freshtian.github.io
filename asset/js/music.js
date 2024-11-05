@@ -9,6 +9,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let isPlaying = false;
     let fading = false;
+    let currentSongIndex = 0;
+    let startingState = 0;
+
+    const songs = [
+        {path: "../../bgm/A Luminous Path.ogg", nameZh: "星月之路", nameEn: "A Luminous Path"},
+        {path: "../../bgm/Crepuscule des idoles.ogg", nameZh: "喝彩吧，终幕之时已至", nameEn: "Crepuscule des idoles"},
+        {path: "../../bgm/Regali teneri.ogg", nameZh: "海风的馈赠", nameEn: "Regali teneri"},
+        {path: "../../bgm/Romantic Encounter.ogg", nameZh: "巧遇的漫想", nameEn: "Romantic Encounter"},
+        {path: "../../bgm/The Faded Idyll.ogg", nameZh: "牧歌的旧梦", nameEn: "The Faded Idyll"},
+        {path: "../../bgm/To the Crescent Moon's Shimmer.ogg", nameZh: "终至月明", nameEn: "To the Crescent Moon's Shimmer"},
+    ]
+
+    function showSongInfo(song) {
+        const songInfo = document.createElement('div');
+        songInfo.classList.add('music-info');
+        songInfo.innerHTML = `<div style="font-size: 15px; color: #fff;">${song.nameZh}</div>
+                              <div style="font-size: 12px; color: #ccc;">${song.nameEn}</div>`;
+
+        document.body.appendChild(songInfo);
+
+        setTimeout(() => {
+            songInfo.classList.add('slide-in');
+        }, 100);
+
+        setTimeout(() => {
+            songInfo.classList.remove('slide-in');
+            setTimeout(() => document.body.removeChild(songInfo), 1300);
+        }, 5000);
+    }
+
+    function getRandomSongIndex(excludeIndex) {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * songs.length);
+        } while (randomIndex === excludeIndex);
+        return randomIndex;
+    }
+
+    function playRandomSong(toSwitch) {
+        if((!toSwitch) || (startingState === 0)){
+            currentSongIndex = getRandomSongIndex(currentSongIndex);
+            const currentSong = songs[currentSongIndex];
+            music.src = currentSong.path;
+            showSongInfo(currentSong); 
+            music.load();
+            startingState = 1;
+        }
+        fadeIn();
+        music.onended = () => {
+            playRandomSong(false);
+        }
+    }
 
     function fadeIn() {
         audioContext.resume();
@@ -42,7 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
             fadeOut();
             toggleMusicButton.classList.remove('playing');
         } else {
-            fadeIn();
+            // fadeIn();
+            playRandomSong(true);
             toggleMusicButton.classList.add('playing');
         }
     });
