@@ -3,23 +3,17 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const loader = document.getElementById("loader");
+    const svg = document.getElementById("loading-shape");
     const loadingText = document.getElementById("loading-text");
-    // const crescentPath = document.getElementById("crescent-path");
-    // const cometPath = document.getElementById("comet-path");
-    // const crescentLen = crescentPath.getTotalLength();
-    // const cometLen = cometPath.getTotalLength();
-
-    // crescentPath.style.strokeDasharray = crescentLen;
-    // cometPath.style.strokeDasharray = cometLen;
 
     const paths = loader.querySelectorAll("path");
 
     paths.forEach((path) => {
         pathLen = path.getTotalLength();
         path.style.strokeDasharray = pathLen;
-        console.log(pathLen);
+        // console.log(pathLen);
     });
-
+    svg.style.opacity = 1;
     let progress = 0;
     const interval = setInterval(() => {
         if(loadingText.classList.contains('moved')){
