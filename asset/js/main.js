@@ -105,6 +105,65 @@ window.onload = function() {
     }else{
         loadingText.classList.add('moved');
     }
+    const svg = document.getElementById("loading-shape");
+
+    const paths = svg.querySelectorAll("path");
+
+    paths.forEach((path) => {
+        pathLen = path.getTotalLength();
+        path.style.strokeDasharray = 0;
+    });
+
+    console.log(svg.namespaceURI);
+// console.log(svg);
+    // console.log(black_moon);
+    // const black_moon = document.createElementNS(svg.namespaceURI, "path");
+    // black_moon.setAttribute("d", "M 40 50 A 25 25 0 1 0 40 50 Z");
+    // black_moon.setAttribute("fill", "#111111");
+    // svg.appendChild(black_moon);
+
+    const fill_comet = document.createElementNS(svg.namespaceURI, "path");
+    fill_comet.setAttribute("d", `
+        M 150 5 
+        Q 150 55 200 55 
+        C 165 55 150 55 150 200 
+        C 150 55 135 55 100 55 
+        Q 150 55 150 5 
+        Z
+    `);
+    fill_comet.setAttribute("fill", "#ffffff");
+    svg.appendChild(fill_comet);
+
+    const wing1 = document.createElementNS(svg.namespaceURI, "path");
+    wing1.setAttribute("d", `
+        M 145 160
+        Q 140 150 130 160
+        T 90 155
+        C 105 160 125 145 135 145
+        Q 105 145 95 125
+        L 105 130
+        Q 95 120 100 100
+        C 105 135 145 120 145 160
+        Z
+    `);
+    wing1.setAttribute("fill", "#b0d8ff");
+    svg.appendChild(wing1);
+
+    const wing2 = document.createElementNS(svg.namespaceURI, "path");
+    wing2.setAttribute("d", `
+        M 155 160
+        Q 160 150 170 160
+        T 210 155
+        C 195 160 175 145 165 145
+        Q 195 145 205 125
+        L 195 130
+        Q 205 120 200 100
+        C 195 135 155 120 155 160
+        Z
+    `);
+    wing2.setAttribute("fill", "#b0d8ff");
+    svg.appendChild(wing2);
+    
     setTimeout(() => {
         document.getElementById("loader").classList.add('fade-out');
     }, cumulativeTime); 

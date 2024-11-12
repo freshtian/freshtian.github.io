@@ -38,8 +38,8 @@
             height: 100%;
             background-color: #3498db;
             display: flex;
-            /* justify-content: center;
-            align-items: center; */
+            justify-content: center;
+            align-items: center;
             z-index: 9999;
             overflow: hidden;
         }
@@ -53,7 +53,7 @@
             background-clip: text;
             color: transparent;
             position: absolute;
-            top: 50%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             transition: transform 1.5s ease, top 1.5s ease, left 1.5s ease, font-size 1.5s ease;   
@@ -65,6 +65,12 @@
             left: 50px; 
             transform: translate(0, 0); 
             background: white;
+        }
+
+        #loading-shape {
+            top: 60%;
+            left: 50%;
+            transform: translate(0%, 50%);
         }
 
         #loader.fade-out {
@@ -80,6 +86,60 @@
 </head>
 <div id="loader">
     <p id="loading-text">The world opens itself before those with noble hearts.</p>
+    <svg width="300" height="300" viewBox="0 0 300 300" id="loading-shape">
+        <path 
+            id="wing1-path1" 
+            d= "M 145 160
+                C 145 120 105 135 100 100
+                Q 95 120 105 130
+                L 95 125
+                Q 105 145 135 145"
+            fill="none" 
+            stroke="#d0fffe" stroke-width="2" stroke-dasharray="0" stroke-dashoffset="114514"
+        />
+        <path 
+            id="wing1-path2" 
+            d= "M 145 160
+                Q 140 150 130 160
+                T 90 155
+                C 105 160 125 145 135 145"
+            fill="none" 
+            stroke="#d0fffe" stroke-width="2" stroke-dasharray="0" stroke-dashoffset="114514"
+        />
+        <path 
+            id="wing2-path1" 
+            d= "M 155 160
+                C 155 120 195 135 200 100
+                Q 205 120 195 130
+                L 205 125
+                Q 195 145 165 145"
+            fill="none" 
+            stroke="#d0fffe" stroke-width="2" stroke-dasharray="0" stroke-dashoffset="114514"
+        />
+        <path 
+            id="wing2-path2" 
+            d= "M 155 160
+                Q 160 150 170 160
+                T 210 155
+                C 195 160 175 145 165 145"
+            fill="none" 
+            stroke="#d0fffe" stroke-width="2" stroke-dasharray="0" stroke-dashoffset="114514"
+        />
+        <path 
+            id="comet-path1" 
+            d= "M 150 5 
+                Q 150 55 200 55 
+                C 165 55 150 55 150 200" 
+            fill="none" stroke="#f3efe0" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
+        />
+        <path 
+            id="comet-path2" 
+            d= "M 150 5 
+                Q 150 55 100 55 
+                C 135 55 150 55 150 200" 
+            fill="none" stroke="#f3efe0" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="0"
+        />
+    </svg>
 </div>
 <body>
     

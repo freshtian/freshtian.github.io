@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function showSongInfo(song) {
         const songInfo = document.createElement('div');
         songInfo.classList.add('music-info');
-        songInfo.innerHTML = `<div style="font-size: 15px; color: #fff;">${song.nameZh}</div>
-                              <div style="font-size: 12px; color: #ccc;">${song.nameEn}</div>`;
+        songInfo.innerHTML = `<div style="font-size: 15px; color: #ffffff;">${song.nameZh}</div>
+                              <div style="font-size: 12px; color: #e5b7ff;">${song.nameEn}</div>`;
 
         document.body.appendChild(songInfo);
 

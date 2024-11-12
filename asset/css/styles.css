@@ -70,16 +70,17 @@ button:hover {
 }
 
 .music-info {
+    cursor: default;
     position: fixed;
     z-index: 100;
     right: -400px;
     top: 12%;
     width: 300px;
-    background-color: #3498db;
-    color: white;
+    background-color: #af74d1;
+    color: #3dadf7;
     padding: 15px;
     /* border-radius: 10px; */
-    box-shadow: 0 4px 8px #2980b9;
+    /* box-shadow: 0 4px 8px #2980b9; */
     text-align: left;
     font-family: 'HYWenHei-85W';
     transition: transform 1.3s ease;

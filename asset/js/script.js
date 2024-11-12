@@ -4,7 +4,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const loader = document.getElementById("loader");
     const loadingText = document.getElementById("loading-text");
-    
+    // const crescentPath = document.getElementById("crescent-path");
+    // const cometPath = document.getElementById("comet-path");
+    // const crescentLen = crescentPath.getTotalLength();
+    // const cometLen = cometPath.getTotalLength();
+
+    // crescentPath.style.strokeDasharray = crescentLen;
+    // cometPath.style.strokeDasharray = cometLen;
+
+    const paths = loader.querySelectorAll("path");
+
+    paths.forEach((path) => {
+        pathLen = path.getTotalLength();
+        path.style.strokeDasharray = pathLen;
+        console.log(pathLen);
+    });
+
     let progress = 0;
     const interval = setInterval(() => {
         if(loadingText.classList.contains('moved')){
@@ -17,12 +32,22 @@ document.addEventListener('DOMContentLoaded', function () {
         loadingText.style.setProperty('-webkit-background-clip', 'text');
         loadingText.style.setProperty('background-clip', 'text');
         loadingText.style.setProperty('color', 'transparent');
+
+        const dashFac = (100 - progress) / 100.0;
+        
+        paths.forEach((path) => {
+            pathLen = path.getTotalLength();
+            path.style.strokeDashoffset = dashFac * pathLen;
+        });
+        // crescentPath.style.strokeDashoffset = dashFac * crescentLen;
+        // cometPath.style.strokeDashoffset = dashFac * cometLen;
+
         if (progress >= 100) {
             clearInterval(interval);
             loadingText.classList.add('moved');
         }
     }, 60);
-
+    
 
     const contentArea = document.getElementById('contentArea');
     const allDivs = contentArea.children;
