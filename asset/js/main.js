@@ -3,16 +3,51 @@ function text2html(text) {
 }
 
 function handleError(text) {
-    var html = text2html(text);
-    if (html == 'WebGL not supported') {
-        html = 'Your browser does not support WebGL.<br>Please see\
-        <a href="https://get.webgl.org/get-a-webgl-implementation/">\
-        Getting a WebGL Implementation</a>.';
-    }
+    onDone(false);
+    // var html = text2html(text);
+    // if (html == 'WebGL not supported') {
+    //     html = 'Your browser does not support WebGL.<br>Please see\
+    //     <a href="https://get.webgl.org/get-a-webgl-implementation/">\
+    //     Getting a WebGL Implementation</a>.';
+    // }
 
-    var loading = document.getElementById('loading');
-    loading.innerHTML = html;
-    loading.style.zIndex = 1;
+    // var loading = document.getElementById('loading');
+    // loading.innerHTML = html;
+    // loading.style.zIndex = 1;
+}
+
+function onDone(loaded) {
+    let loader = document.getElementById("loader");
+    let loadingText = document.getElementById("loading-text");
+
+    loadingText.style.setProperty('background', `linear-gradient(to right, white 100%, #3498db 100%)`);
+    loadingText.style.setProperty('-webkit-background-clip', 'text');
+    loadingText.style.setProperty('background-clip', 'text');
+    loadingText.style.setProperty('color', 'transparent');
+
+    let cumulativeTime = 1500;
+    
+    if(loaded){
+        cumulativeTime -= 1500;
+    }else{
+        loadingText.classList.add('moved');
+    }
+    const svg = document.getElementById("loading-shape");
+
+    const paths = svg.querySelectorAll("path");
+
+    paths.forEach((path) => {
+        pathLen = path.getTotalLength();
+        path.style.strokeDasharray = 0;
+    });
+    
+    setTimeout(() => {
+        document.getElementById("loader").classList.add('fade-out');
+    }, cumulativeTime); 
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+    }, cumulativeTime + 300); 
+    // console.log("WebGL initialized");
 }
 
 window.onerror = handleError;
@@ -36,14 +71,6 @@ var radius;
 var paused = false;
 
 window.onload = function() {
-
-    let loader = document.getElementById("loader");
-    let loadingText = document.getElementById("loading-text");
-    let loaded = false;
-    loadingText.addEventListener('transitionend', function(){
-        loaded = true;
-    });
-
     var ratio = window.devicePixelRatio || 1;
     //var help = document.getElementById('help');
 
@@ -93,34 +120,7 @@ window.onload = function() {
 
     document.getElementById('loading').innerHTML = '';
 
-    loadingText.style.setProperty('background', `linear-gradient(to right, white 100%, #3498db 100%)`);
-    loadingText.style.setProperty('-webkit-background-clip', 'text');
-    loadingText.style.setProperty('background-clip', 'text');
-    loadingText.style.setProperty('color', 'transparent');
-
-    let cumulativeTime = 1500;
-    
-    if(loaded){
-        cumulativeTime -= 1500;
-    }else{
-        loadingText.classList.add('moved');
-    }
-    const svg = document.getElementById("loading-shape");
-
-    const paths = svg.querySelectorAll("path");
-
-    paths.forEach((path) => {
-        pathLen = path.getTotalLength();
-        path.style.strokeDasharray = 0;
-    });
-    
-    setTimeout(() => {
-        document.getElementById("loader").classList.add('fade-out');
-    }, cumulativeTime); 
-    setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-    }, cumulativeTime + 300); 
-    console.log("WebGL initialized");
+    onDone(true);
 
     onresize();
 

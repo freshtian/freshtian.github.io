@@ -1,6 +1,17 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    const scrollableTexts = document.querySelectorAll('.scrollable-text');
+    scrollableTexts.forEach((scrollableText) => {
+        scrollableText.addEventListener('wheel', function (event) {
+            event.stopPropagation();
+        }); 
+    });
+
+    let loaded = false;
+    // loadingText.addEventListener('transitionend', function(){
+    //     loaded = true;
+    // });
 
     const loader = document.getElementById("loader");
     const svg = document.getElementById("loading-shape");
@@ -16,11 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
     svg.style.opacity = 1;
     let progress = 0;
     const interval = setInterval(() => {
-        if(loadingText.classList.contains('moved')){
-            clearInterval(interval);
-            progress = 100;
-            return;
-        }
+        // if(loadingText.classList.contains('moved')){
+        //     clearInterval(interval);
+        //     progress = 100;
+        //     loaded = true;
+        //     return;
+        // }
         progress += 0.5;
         loadingText.style.setProperty('background', `linear-gradient(to right, white ${progress}%, #2980b9 ${progress}%)`);
         loadingText.style.setProperty('-webkit-background-clip', 'text');
@@ -39,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (progress >= 100) {
             clearInterval(interval);
             loadingText.classList.add('moved');
+            loaded = true;
         }
-    }, 60);
-    
+    }, 30);
 
     const contentArea = document.getElementById('contentArea');
     const allDivs = contentArea.children;
