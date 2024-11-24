@@ -1,3 +1,17 @@
+/*
+ * Original code is licensed under the MIT License:
+ * WebGL Water
+ * https://madebyevan.com/webgl-water/
+ *
+ * Copyright 2011 Evan Wallace
+ * Released under the MIT license
+
+
+ * Modifications and additional code by 李乐平 (LI Leping), Copyright (c) 2024.
+ * All rights reserved for the modifications and additional code.
+*/
+
+
 function text2html(text) {
     return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
 }
@@ -16,7 +30,13 @@ function handleError(text) {
     // loading.style.zIndex = 1;
 }
 
+let loadingAnimationStatus = 0;
+
 function onDone(loaded) {
+    loadingAnimationStatus += 1;
+    if(loadingAnimationStatus < 2){
+        return;
+    }
     let loader = document.getElementById("loader");
     let loadingText = document.getElementById("loading-text");
 

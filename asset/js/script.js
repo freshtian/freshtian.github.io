@@ -1,4 +1,9 @@
+/*
+    Copyright (c) 2024 李乐平 (LI Leping)
 
+    This code is proprietary software and may not be used, modified, or distributed
+    without the express written permission of 李乐平 (LI Leping).
+*/
 
 document.addEventListener('DOMContentLoaded', function () {
     const scrollableTexts = document.querySelectorAll('.scrollable-text');
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(interval);
             loadingText.classList.add('moved');
             loaded = true;
+            onDone(true);
         }
     }, 30);
 

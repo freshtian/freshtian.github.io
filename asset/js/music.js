@@ -1,3 +1,10 @@
+/*
+    Copyright (c) 2024 李乐平 (LI Leping)
+
+    This code is proprietary software and may not be used, modified, or distributed
+    without the express written permission of 李乐平 (LI Leping).
+*/
+
 document.addEventListener('DOMContentLoaded', function () {
     const music = document.getElementById('backgroundMusic');  
     const toggleMusicButton = document.getElementById('bgmButton');
@@ -108,16 +115,49 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    toggleMusicButton.addEventListener('click', () => {
-        if (fading) {
-            return;
-        }
-        if (isPlaying) {
-            fadeOut();
-            toggleMusicButton.classList.remove('playing');
-        } else {
-            playRandomSong(true);
-            toggleMusicButton.classList.add('playing');
+    let isLongPress = false; 
+    let longPressTimer;
+
+    toggleMusicButton.addEventListener('mousedown', (event) => {
+        if (event.button === 0) {
+            isLongPress = false;
+            longPressTimer = setTimeout(() => {
+                isLongPress = true;
+                playRandomSong(false);
+                toggleMusicButton.classList.add('playing');
+            }, 500);
         }
     });
+
+    toggleMusicButton.addEventListener('mouseup', (event) => {
+        if (event.button === 0) {
+            clearTimeout(longPressTimer);
+            if (!isLongPress) {
+                if (isPlaying) {
+                    fadeOut();
+                    toggleMusicButton.classList.remove('playing');
+                } else {
+                    playRandomSong(true);
+                    toggleMusicButton.classList.add('playing');
+                }
+            }
+        }
+    });
+
+    toggleMusicButton.addEventListener('mouseleave', () => {
+        clearTimeout(longPressTimer);
+    });
+
+    // toggleMusicButton.addEventListener('click', () => {
+    //     if (fading) {
+    //         return;
+    //     }
+    //     if (isPlaying) {
+    //         fadeOut();
+    //         toggleMusicButton.classList.remove('playing');
+    //     } else {
+    //         playRandomSong(true);
+    //         toggleMusicButton.classList.add('playing');
+    //     }
+    // });
 });

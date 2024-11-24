@@ -1,3 +1,11 @@
+/*
+ * WebGL Water
+ * https://madebyevan.com/webgl-water/
+ *
+ * Copyright 2011 Evan Wallace
+ * Released under the MIT license
+ */
+
 var helperFunctions = '\
   const float IOR_AIR = 1.0;\
   const float IOR_WATER = 1.333;\

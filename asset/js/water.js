@@ -1,3 +1,11 @@
+/*
+ * WebGL Water
+ * https://madebyevan.com/webgl-water/
+ *
+ * Copyright 2011 Evan Wallace
+ * Released under the MIT license
+ */
+
 // The data in the texture is (position.y, velocity.y, normal.x, normal.z)
 function Water() {
   var vertexShader = '\

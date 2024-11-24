@@ -1,3 +1,11 @@
+/*
+ * WebGL Water
+ * https://madebyevan.com/webgl-water/
+ *
+ * Copyright 2011 Evan Wallace
+ * Released under the MIT license
+ */
+
 function Cubemap(images) {
     this.id = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_CUBE_MAP, this.id);
