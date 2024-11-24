@@ -1,28 +1,25 @@
 <head>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: 'MyFont';
+            src: url('./resource/font/zh-cn_pruned.ttf') format('truetype');
+        }
+        .center-title {
+            font-family: 'MyFont';
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .plain-text {
+            font-family: 'MyFont';
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    </style>
 </head>
-
-<style type="text/css">
-@font-face {
-    font-family: 'MyFont';
-    src: url('./resource/font/zh-cn_pruned.ttf') format('truetype');
-}
-
-.center-title {
-    font-family: 'MyFont';
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.plain-text {
-    font-family: 'MyFont';
-    font-size: 15px;
-    line-height: 1.5;
-    text-align: justify;
-}
-</style>
 <body>
    <div class="plain-text">
         <span class="center-title" style="font-family: 'MyFont';"><a href="https://estraie.github.io" style="color: #448822; text-decoration: none;">✧ A Traveler's Abditory ✧</a></span>
