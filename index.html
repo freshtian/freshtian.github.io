@@ -89,6 +89,7 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico?" type="image/x-icon">
     <link rel="stylesheet" href="asset/css/styles.css">
+    <link rel="stylesheet" href="asset/css/board.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <div id="loader">
@@ -374,6 +375,7 @@
                 <button id="mainButton">Home</button>
                 <button id="reminiscenceButton">Archive</button>
                 <button id="galleryButton">Gallery</button> 
+                <button id="fairgroundButton">Fairground</button>
                 <button id="bgmButton" class="music-button">♪</button>
             </div>
         </div>
@@ -421,7 +423,6 @@
                     <h2>Advertising Place for Rent</h2>
                 </div>
             </section>
-
             <section class="content left-align" id="section4">
                 <div class="background-image" style="background-image: url('img/bg/4.jpg');"></div>
                 <div class="text-overlay">
@@ -516,6 +517,26 @@
                 </div>
             </section>
         </div>
+        <div id = "fairgroundContent" style = "display:none;">
+            <section class="content left-align" id="section-test">
+                <div class="background-image" style="background-image: url('img/bg/4.jpg');"></div>
+                <div class="text-overlay" style="display: flex;">
+                    <div class="board" id="board"></div>
+                    <div style="width: 50vw">
+                        <h2>Life and Death</h2>
+                        <p id="retry" style="color:#cfedca; border: 1px solid #cfedca; text-decoration: none; cursor: pointer; display: inline-block;">Retry</p>
+                        <p>White to move.</p>
+                        <p id="game-comment"></p>
+                    </div>
+                </div> 
+            </section>
+            <section class="content left-align" id="gallery_section2">
+                <div class="background-image" style="background-image: url('img/bg/4.jpg');"></div>
+                <div class="text-overlay">
+                    <!-- Add content for section 4 -->
+                </div>
+            </section>
+        </div>
     </div>
 
     <footer>
@@ -551,7 +572,8 @@
         });
     });
 </script>
-
+<script src="asset/js/board.js"></script>
+<script src="asset/js/q.js"></script>
 
 <!-- <path 
             id="wing1-path1" 

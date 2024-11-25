@@ -1,0 +1,66 @@
+/* .board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} */
+
+
+
+.board {
+    position: relative;
+    background-color: transparent;
+    /* background-color: #deb887; */
+    /* border: 1px solid #8b4513; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    width: calc(20vw);
+    height: calc(50vh);
+    margin: 50px;
+    /* transform: translate(10px, 10px); */
+}
+.line {
+    position: absolute;
+    background-color: white;
+}
+.line.horizontal {
+    height: 1px;
+}
+.line.vertical {
+    width: 1px;
+}
+
+:root {
+    --player-color: rgba(255, 255, 255, 0.5);
+}
+
+.point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.point:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: var(--player-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.stone {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.stone.black {
+    background-color: black;
+}
+.stone.white {    
+    background-color: white;
+}

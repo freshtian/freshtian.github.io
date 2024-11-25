@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let loaded = false;
+    let retrySet = false;
     // loadingText.addEventListener('transitionend', function(){
     //     loaded = true;
     // });
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const contents = {
         "mainContent": document.querySelectorAll('#mainContent .content'),
         "reminiscenceContent": document.querySelectorAll('#reminiscenceContent .content'),
-        "galleryContent": document.querySelectorAll('#galleryContent .content')
+        "galleryContent": document.querySelectorAll('#galleryContent .content'),
+        "fairgroundContent": document.querySelectorAll('#fairgroundContent .content'),
     };
 
     let currentContentKey = 'mainContent';
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('mainButton').addEventListener('click', () => switchContent('mainContent'));
     document.getElementById('reminiscenceButton').addEventListener('click', () => switchContent('reminiscenceContent'));
     document.getElementById('galleryButton').addEventListener('click', () => switchContent('galleryContent'));
+    document.getElementById('fairgroundButton').addEventListener('click', () => switchContent('fairgroundContent'));
 
     Object.values(contents).forEach((content) => {
         content.forEach((section) => {
@@ -109,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
             textOverlay.style.opacity = 0;
             textOverlay.style.visibility = 'hidden';
             textOverlay.style.transform = "translateY(0%)";
+
             if(timeout){
                 console.log("Clearing timeout " + timeout);
                 clearTimeout(timeout);
@@ -170,6 +174,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 textOverlay.style.opacity = 0.9;
                 textOverlay.style.visibility = 'visible';
                 textOverlay.style.transform = "translateY(0%)";
+
+                let board = textOverlay.querySelector(".board");
+                console.log(board);
+                if(board){
+                    if(!board.classList.contains("initialized")){
+                        board.classList.add("initialized");
+                        // initBoard(board);
+                        console.log("Initializing board");
+                        currentQuestion = loadRandomQuestion(board);
+                    }
+                    if(!retrySet){
+                        let retry = document.getElementById("retry");
+                        if(retry){
+                            retry.addEventListener("click", function(){
+                                loadQuestion(board, questions[currentQuestion]);
+                            });
+                            retrySet = true;
+                        }
+                    }
+                }
             } else {
                 background.zIndex = -51;
                 background.style.opacity = 0;
