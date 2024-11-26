@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let loaded = false;
-    let retrySet = false;
+    let boardSet = false;
     // loadingText.addEventListener('transitionend', function(){
     //     loaded = true;
     // });
@@ -184,13 +184,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log("Initializing board");
                         currentQuestion = loadRandomQuestion(board);
                     }
-                    if(!retrySet){
+                    if(!boardSet){
                         let retry = document.getElementById("retry");
+                        let rd_next = document.getElementById("rd-next");
                         if(retry){
                             retry.addEventListener("click", function(){
                                 loadQuestion(board, questions[currentQuestion]);
                             });
-                            retrySet = true;
+                            rd_next.addEventListener("click", function(){
+                                currentQuestion = loadRandomQuestion(board, currentQuestion);
+                            });
+                            boardSet = true;
                         }
                     }
                 }

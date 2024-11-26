@@ -272,7 +272,7 @@ function move(board, row, col, gridSizeX, gridSizeY, player, moves = null){
             }
         }else{
             let gameComment = document.getElementById("game-comment");
-            gameComment.innerHTML = "错误。";
+            gameComment.innerHTML = "错误。Wrong move.";
             allowMove = false;
         }
     }
