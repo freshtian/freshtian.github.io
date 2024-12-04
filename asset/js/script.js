@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateContent(nextKey) {
         // console.log("Next key: " + nextKey + " Current key: " + currentContentKey);
         let sections = contents[currentContentKey];
+        album = nextKey;
         // isTransitioning = true;
         const sidebar = document.querySelector('.sidebar');
         const header = document.querySelector('header');
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             textOverlay.style.transform = "translateY(0%)";
 
             if(timeout){
-                console.log("Clearing timeout " + timeout);
+                // console.log("Clearing timeout " + timeout);
                 clearTimeout(timeout);
                 timeout = null;
                 if(timeoutSession){
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const img = new Image();
             img.src = backgroundImageUrl;
-            console.log(img.src);
+            // console.log(img.src);
             if (img.complete) {
                 ;
             } else {
@@ -176,12 +177,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 textOverlay.style.transform = "translateY(0%)";
 
                 let board = textOverlay.querySelector(".board");
-                console.log(board);
+                // console.log(board);
                 if(board){
                     if(!board.classList.contains("initialized")){
                         board.classList.add("initialized");
                         // initBoard(board);
-                        console.log("Initializing board");
+                        // console.log("Initializing board");
                         currentQuestion = loadRandomQuestion(board);
                     }
                     if(!boardSet){

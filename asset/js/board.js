@@ -1,20 +1,20 @@
+/*
+    Copyright (c) 2024 李乐平 (LI Leping)
 
-const cellSize = 50; // Size of each cell in pixels
+    This code is proprietary software and may not be used, modified, or distributed
+    without the express written permission of 李乐平 (LI Leping).
+*/
+
+const cellSize = 50;
 let gridWidth = 50;
 let allowMove = true;
 let currentQuestion = 0;
 
 function initBoard(board, gridSizeX = 7, gridSizeY = 7, forDemo = false){
-    // const board = document.getElementById("board");
-
-    // Set board size (excluding last row/column)
-    // board.style.width = `${(gridSize - 1) * cellSize}px`;
-    // board.style.height = `${(gridSize - 1) * cellSize}px`;
     gridWidth = Math.min(Math.min((board.clientHeight) / gridSizeX, (board.clientWidth) / gridSizeY), cellSize);
+    document.documentElement.style.setProperty('--stone-radius',   `${gridWidth - 4}px`);
 
-    // Draw grid lines
     for (let i = 0; i < gridSizeX - 1; i++) {
-        // Horizontal lines
         const horizontal = document.createElement("div");
         horizontal.className = "line horizontal";
         horizontal.style.width = `${(gridSizeY - 1) * gridWidth}px`;
@@ -22,7 +22,6 @@ function initBoard(board, gridSizeX = 7, gridSizeY = 7, forDemo = false){
         board.appendChild(horizontal);
     }
     for (let i = 0; i < gridSizeY - 1; i++) {
-        // Vertical lines
         const vertical = document.createElement("div");
         vertical.className = "line vertical";
         vertical.style.height = `${(gridSizeX - 1) * gridWidth}px`;
