@@ -73,6 +73,7 @@ function onDone(loaded) {
 window.onerror = handleError;
 
 var gl = GL.create({alpha: true});
+// var gl = GL.create({alpha: false});
 //var gl = GL.create();
 //var gl = canvas.getContext("webgl", { premultipliedAlpha: false });
 var water;

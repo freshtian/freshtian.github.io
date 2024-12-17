@@ -3,6 +3,16 @@
     src: url('../../resource/font/zh-cn_pruned.ttf') format('truetype'); 
 }
 
+@font-face {
+    font-family: 'Sumeru-Regular'; 
+    src: url('../../resource/font/SumeruScribe-Regular.ttf') format('truetype'); 
+}
+
+.sumeru-text {
+    font-family: 'Sumeru-Regular';
+    font-size: 15px;
+}
+
 body {
     font-family: 'HYWenHei-85W';
     margin: 0;
