@@ -8,6 +8,16 @@
     src: url('../../resource/font/SumeruScribe-Regular.ttf') format('truetype'); 
 }
 
+@font-face {
+    font-family: 'SC-Regular';
+    src: url('../../resource/font/SC-Regular-pruned.otf') format('opentype');
+}
+
+.sc-text {
+    font-family: 'SC-Regular';
+    font-size: 12px;
+}
+
 .sumeru-text {
     font-family: 'Sumeru-Regular';
     font-size: 15px;
@@ -176,12 +186,19 @@ footer {
     visibility: hidden; 
     transition: visibility 0.8s ease, transform 0.8s ease; 
     position: fixed;
-    top: 25%;
-    left: 15%;
+    top: 28%;
+    left: 18%;
     /* //transform: translate(-50%, -50%); */
-    width: 70%;
+    width: 64%;
     text-align: center;
     user-select: none;
+    font-family: "SC-Regular";
+}
+
+.text-overlay p, .text-overlay h2{
+    line-height: 2;
+    margin-top: 0;
+    margin-bottom: 0; 
 }
 
 #section1 .text-overlay {
@@ -257,3 +274,5 @@ github-link:hover {
 .scrollable-text::-webkit-scrollbar {
     display: none; /* Chrome/Safari 隐藏滚动条 */
 }
+
+

@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     paths.forEach((path) => {
         pathLen = path.getTotalLength();
         path.style.strokeDasharray = pathLen;
+        path.style.strokeDashoffset = pathLen;
         // console.log(pathLen);
     });
     svg.style.opacity = 1;
@@ -45,11 +46,28 @@ document.addEventListener('DOMContentLoaded', function () {
         loadingText.style.setProperty('background-clip', 'text');
         loadingText.style.setProperty('color', 'transparent');
 
-        const dashFac = (100 - progress) / 100.0;
+        // const dashFac = (100 - progress) / 100.0;
+
+        const sigmoidInverse = (x) => {
+            return 1 / (1 + Math.exp(x));
+        };
+
+        const mapProgressToX = (progress) => {
+            return (progress - 50) / 16.67;
+        };
+
+        const dashFac = (progress) => {
+            const x = mapProgressToX(progress);
+            const sigmoidValue = sigmoidInverse(x);
+            const minSigmoid = sigmoidInverse(-3);
+            const maxSigmoid = sigmoidInverse(3);
+            
+            return (sigmoidValue - minSigmoid) / (maxSigmoid - minSigmoid);
+        };
         
         paths.forEach((path) => {
             pathLen = path.getTotalLength();
-            path.style.strokeDashoffset = dashFac * pathLen;
+            path.style.strokeDashoffset = dashFac(100 - progress) * pathLen;
         });
         // crescentPath.style.strokeDashoffset = dashFac * crescentLen;
         // cometPath.style.strokeDashoffset = dashFac * cometLen;
