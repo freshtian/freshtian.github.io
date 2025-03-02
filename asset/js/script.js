@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(currentSectionIndex >= sections.length - 1) {
             sidebar.style.opacity = 0;
             sidebar.style.visibility = "hidden";
-            sidebar.style.transform = "translateY(-30%)";
+            sidebar.style.transform = "translateY(-12%)";
             header.style.opacity = 0;
             footer.style.opacity = 0;
             const buttons = document.querySelectorAll('header button');
