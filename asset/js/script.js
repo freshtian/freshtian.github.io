@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             loaded = true;
             onDone(true);
         }
-    }, 30);
+    }, 20);
 
     const contentArea = document.getElementById('contentArea');
     const allDivs = contentArea.children;

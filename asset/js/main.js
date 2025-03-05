@@ -94,7 +94,7 @@ var paused = false;
 window.onload = function() {
     var ratio = window.devicePixelRatio || 1;
     //var help = document.getElementById('help');
-
+    // document.getElementById("opening-music").play();
     function onresize() {
         var width = innerWidth;
         var height = innerHeight;
