@@ -1,3 +1,4 @@
+
 <!-- 
     Copyright (c) 2024 李乐平 (LI Leping)
 
@@ -86,284 +87,419 @@
         }
     </style>
     <link rel="preload" href="resource/font/en-us.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="./favicon.ico?" type="image/x-icon">
+    <link rel="shortcut icon" href="./paul.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./paul.ico?" type="image/x-icon">
     <link rel="stylesheet" href="asset/css/styles.css">
     <link rel="stylesheet" href="asset/css/board.css">
     <link rel="stylesheet" href="asset/css/sakura.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./paul.ico" type="image/x-icon">
 </head>
-<div id="loader">
+<div id="loader1">
     <p id="loading-text"></p>
+
     <svg width="100%" height="100%" viewBox="0 0 1920 1080" id="loading-shape" preserveAspectRatio="xMidYMid slice" style="opacity: 0">
-        <path id="lumine-head1" fill="none" 
-            d= "
-            M 368 627 Q 338 650 317 627 T 297 593 C 297 563 307 455 465 476 Q 435 450 433 410 Q 430 470 444 489 Q 410 470 419 396 L 400 433
-            Q 391 418 419 360 Q 385 360 387 315 Q 410 330 430 313 L 413 274 L 394 286
-            Q 394 250 427 242 Q 374 247 393 145 Q 455 220 427 242 Q 410 270 427 308 Q 450 270 427 242
-            C 447 280 463 270 495 165 Q 460 180 427 242 Q 460 180 495 165 L 510 145 Q 430 140 445 180
-            Q 435 160 445 145 Q 424 150 418 172   
-            "
-            stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head2" fill="none" 
-        d= "
-        M 487 143 Q 520 70 640 80 Q 700 60 790 130 Q 830 170 850 220 T 900 345 Q 920 410 860 445 
-        Q 880 430 870 380 M 510 145 Q 550 90 660 115 Q 750 80 820 166 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head3" fill="none"
-        d= "
-        M 660 115 C 770 65 890 265 870 380 Q 850 480 797 460 Q 820 450 834 390 Q 820 440 790 440 
-        C 850 400 830 200 710 160 L 700 172 C 840 200 820 400 815 370 L 770 294 M 720 185 
-        C 775 190 810 425 658 418 Q 720 418 718 330   
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head4" fill="none" 
-        d= "
-        M 658 415 Q 700 415 718 330 Q 710 408 633 408 Q 701 340 681 252 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head5" fill="none"
-        d= "
-        M 658 415 Q 700 415 718 330 Q 710 408 633 408 Q 701 340 681 252 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head6" fill="none"
-        d= "
-        M 671 309 Q 675 340 633 408
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head7" fill="none"
-        d= "
-        M 683 270 Q 650 370 546 390 Q 620 345 633 296 Q 620 340 543 377
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head8" fill="none"
-        d= "
-        M 626 183 Q 650 173 675 173 L 664 161 Q 580 200 556 296 
-        L 574 309 C 540 350 520 340 510 306 Q 540 349 530 388 C 480 380 490 320 511 314
-        C 490 320 500 360 475 360 Q 447 320 473 310 L 493 311 L 503 321   
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head9" fill="none"
-        d= "
-        M 493 311 L 501 297
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head10" fill="none" 
-        d= "
-        M 493 311 L 501 298  
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head11" fill="none" 
-        d= "
-        M 481 269 Q 490 290 510 307
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head12" fill="none"
-        d= "
-        M 557 297 Q 510 267 510 307 C 530 260 505 240 514 231 L 492 243
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head13" fill="none" 
-        d= "
-        M 478 216 Q 495 256 502 261 Q 470 273 445 264 Q 447 280 441 323 Q 420 290 431 315
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head14" fill="none" 
-        d= "
-        M 447 265 C 455 310 465 310 494 312 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head20" fill="none" 
-        d= "
-        M 546 334 C 535 374 550 465 600 462 C 550 490 490 450 475 361
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head21" fill="none" 
-        d= "
-        M 494 419 Q 494 490 544 490 Q 520 510 465 476
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head22" fill="none" 
-        d= "
-        M 368 627 C 290 654 290 560 376 541 Q 510 540 518 450
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head23" fill="none" 
-        d= "
-        M 376 541 C 335 590 370 610 386 605 C 350 645 310 610 341 557
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head24" fill="none" 
-        d= "
-        M 469 525 Q 480 525 509 510 L 496 525 Q 520 530 545 507 L 545 522 L 561 513 Q 561 488 568 489
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head25" fill="none" 
-        d= "
-        M 666 538 C 605 565 560 500 568 479
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head26" fill="none" 
-        d= "
-        M 561 471 L 593 503 Q 630 530 700 549 Q 710 555 779 483 C 810 440 790 405 816 371  
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head27" fill="none" 
-        d= "
-        M 770 495 Q 760 513 753 515 Q 765 515 789 489
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head28" fill="none" 
-        d= "
-        M 791 466 Q 785 540 767 550 Q 734 557 723 552 Q 750 595 773 586 C 760 630 724 666 714 655 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head28" fill="none" 
-        d= "
-        M 791 466 Q 785 540 767 550 Q 734 557 723 552 Q 750 595 773 586 C 760 630 724 666 714 655 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-head28" fill="none" 
-        d= "
-        M 714 655 C 740 680 810 680 832 531 L 834 458 L 837 455 Q 845 480 880 490 L 873 466  
-        L 887 491 L 902 493 L 888 469 L 911 491 L 926 485 L 904 468 L 934 475 Q 950 450 943 438
-        Q 900 475 853 434 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body1" fill="none" 
-        d= "
-        M 563 512 L 522 575 L 528 575 L 420 695 C 400 710 436 800 415 893 T 382 1046 L 385 1079
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body2" fill="none" 
-        d= "
-        M 674 541 L 669 551 L 660 556 L 655 572 L 660 556 Q 695 600 697 664 Q 700 680 710 678  
-        L 711 688 L 701 688 L 694 676 C 600 660 550 570 528 577
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body3" fill="none" 
-        d= "
-        M 728 533 L 748 554 
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body4" fill="none" 
-        d= "
-        M 787 650 L 813 697 L 811 882 L 768 922 L 769 944 Q 840 1020 859 1080
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body5" fill="none" 
-        d= "
-        M 583 1080 L 542 1040 L 493 983 C 490 970 510 965 535 984 L 552 1005 C 572 1035 600 985 653 1048
-        L 638 1031 L 658 1036 T 670 1035 L 716 1060 Q 740 1012 753 1012 Q 763 979 782 987 L 775 1003
-        L 768 1013 L 775 1003 Q 796 990 800 1004 L 764 1067 L 741 1080 L 736 1080 L 768 1015 
-        Q 765 1012 753 1012 Q 740 1012 716 1060 L 692 1080 L 702 1065 T 703 1057 T 655 1080
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body6" fill="none" 
-        d= "
-        M 665 1037 L 658 1022 Q 590 1010 547 975 Q 476 960 416 991 Q 476 960 547 975 L 550 952 
-        L 538 932 L 534 836 T 540 797 T 528 712 Q 579 712 621 747 Q 630 700 623 648 Q 630 700 621 747
-        C 690 790 690 934 750 938 Q 725 990 659 1022 Q 725 990 750 938 L 769 922 L 750 938 L 765 894
-        L 758 859 Q 850 750 769 662
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-body7" fill="none" 
-        d= "
-        M 694 548 Q 710 590 748 636 L 679 587
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-mouth" fill="none" 
-        d= "
-        M 674 501 Q 701 508 723 496
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-eyelash1" fill="none" 
-        d= "
-        M 582 427 Q 570 410 556 401 L 576 391 L 570 385 L 582 387 L 589 384 L 585 380 L 601 381 
-        Q 630 376 647 386 L 642 394 Q 597 385 577 406 Q 576 420 582 427 Z
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-eyelash2" fill="none" 
-        d= "
-        M 791 404 L 809 374 L 799 372 L 803 367 L 789 368 L 789 359 L 784 365 Q 760 363 750 371
-        Q 745 380 731 396 L 730 407 Q 752 363 794 383 Q 794 388 791 404 Z
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-eye1" fill="none" 
-        d= "
-        M 582 402 A 25 32 -25 1 0 628 392
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-iris1" fill="none" 
-        d= "
-        M 607 392 A 11 16 -10 1 0 608 392 Z
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-pupil1" fill="none" 
-        d= "
-        M 609 400 A 4 7 8 1 0 610 400 Z
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-eye2" fill="none" 
-        d= "
-        M 738 396 A 21 28 12 1 0 775 377
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-iris2" fill="none" 
-        d= "
-        M 755 382 A 11 15 2 1 0 756 382 Z
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
-        <path id="lumine-pupil2" fill="none" 
-        d= "
-        M 758 390 A 3 6 2 1 0 759 390 Z
-        "
-        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"
-        />
     </svg>
 </div>
+<div id="loader">
+<!--    <p id="loading-text"></p>-->
+    <canvas class="particles"></canvas>
+    <div class="vortex"></div>
+    <div class="loader-content">
+        <div class="loading-text">INITIALIZING SYSTEM...</div>
+    </div>
+</div>
+<script>
+// 添加粒子效果
+function createParticles() {
+    const canvas = document.querySelector('.particles');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    // 加载背景图片
+    const bgImage = new Image();
+    bgImage.src = 'img/bg/b3.png'; // 替换为你的背景图路径
+
+    // 烟花颜色池
+    const colors = [
+        '#FF0000', '#FF7F00', '#FFFF00', // 红、橙、黄
+        '#00FF00', '#0000FF', '#4B0082', // 绿、蓝、靛
+        '#8B00FF', '#FF1493', '#00FFFF'  // 紫、粉、青
+    ];
+
+    const particles = [];
+    const PARTICLE_COUNT = 300; // 增加粒子数量
+
+    class Particle {
+        constructor() {
+            this.reset();
+            this.color = colors[Math.floor(Math.random() * colors.length)]; // 随机颜色
+        }
+
+        reset() {
+            // 设置烟花爆炸原点
+            this.startX = width/2 + (Math.random() - 0.5) * 100; // 随机偏移
+            this.startY = height/2 + (Math.random() - 0.5) * 100;
+
+            this.x = this.startX;
+            this.y = this.startY;
+
+            // 增加随机运动参数
+            this.angle = Math.random() * Math.PI * 2;
+            this.speed = Math.random() * 8 + 2;
+            this.vx = Math.cos(this.angle) * this.speed;
+            this.vy = Math.sin(this.angle) * this.speed;
+
+            this.radius = Math.random() * 4 + 1;
+            this.alpha = 1;
+            this.gravity = 0.1; // 重力效果
+        }
+
+        update() {
+            this.vy += this.gravity; // 添加重力
+            this.x += this.vx;
+            this.y += this.vy;
+            this.alpha -= 0.008; // 减缓消失速度
+            if(this.alpha <= 0) this.reset();
+        }
+
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha;
+            ctx.fillStyle = this.color;
+
+            // 添加发光效果
+            ctx.shadowColor = this.color;
+            ctx.shadowBlur = 15;
+
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    // 初始化粒子
+    for(let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+    }
+
+    function animate() {
+        // 先绘制背景图
+        ctx.drawImage(bgImage, 0, 0, width, height);
+
+        // 添加背景模糊效果
+        ctx.filter = 'blur(2px)';
+        ctx.drawImage(bgImage, 0, 0, width, height);
+        ctx.filter = 'none';
+
+        // 绘制粒子
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    // 等待背景图加载完成
+    bgImage.onload = () => {
+        animate();
+
+        // 窗口大小调整时重置背景
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+    };
+}
+
+// 初始化加载动画
+window.addEventListener('load', () => {
+    createParticles();
+
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        loader.style.transition = 'opacity 1s ease';
+        setTimeout(() => {
+            loader.remove();
+            // 显示樱花效果
+            document.querySelector('.sakura').style.display = 'block';
+        }, 1000);
+    }, 2000);
+});
+</script>
+
+
+<!--        <path id="lumine-head1" fill="none"-->
+<!--            d= "-->
+<!--            M 368 627 Q 338 650 317 627 T 297 593 C 297 563 307 455 465 476 Q 435 450 433 410 Q 430 470 444 489 Q 410 470 419 396 L 400 433-->
+<!--            Q 391 418 419 360 Q 385 360 387 315 Q 410 330 430 313 L 413 274 L 394 286-->
+<!--            Q 394 250 427 242 Q 374 247 393 145 Q 455 220 427 242 Q 410 270 427 308 Q 450 270 427 242-->
+<!--            C 447 280 463 270 495 165 Q 460 180 427 242 Q 460 180 495 165 L 510 145 Q 430 140 445 180-->
+<!--            Q 435 160 445 145 Q 424 150 418 172-->
+<!--            "-->
+<!--            stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head2" fill="none"-->
+<!--        d= "-->
+<!--        M 487 143 Q 520 70 640 80 Q 700 60 790 130 Q 830 170 850 220 T 900 345 Q 920 410 860 445-->
+<!--        Q 880 430 870 380 M 510 145 Q 550 90 660 115 Q 750 80 820 166-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head3" fill="none"-->
+<!--        d= "-->
+<!--        M 660 115 C 770 65 890 265 870 380 Q 850 480 797 460 Q 820 450 834 390 Q 820 440 790 440-->
+<!--        C 850 400 830 200 710 160 L 700 172 C 840 200 820 400 815 370 L 770 294 M 720 185-->
+<!--        C 775 190 810 425 658 418 Q 720 418 718 330-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head4" fill="none"-->
+<!--        d= "-->
+<!--        M 658 415 Q 700 415 718 330 Q 710 408 633 408 Q 701 340 681 252-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head5" fill="none"-->
+<!--        d= "-->
+<!--        M 658 415 Q 700 415 718 330 Q 710 408 633 408 Q 701 340 681 252-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head6" fill="none"-->
+<!--        d= "-->
+<!--        M 671 309 Q 675 340 633 408-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head7" fill="none"-->
+<!--        d= "-->
+<!--        M 683 270 Q 650 370 546 390 Q 620 345 633 296 Q 620 340 543 377-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head8" fill="none"-->
+<!--        d= "-->
+<!--        M 626 183 Q 650 173 675 173 L 664 161 Q 580 200 556 296-->
+<!--        L 574 309 C 540 350 520 340 510 306 Q 540 349 530 388 C 480 380 490 320 511 314-->
+<!--        C 490 320 500 360 475 360 Q 447 320 473 310 L 493 311 L 503 321-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head9" fill="none"-->
+<!--        d= "-->
+<!--        M 493 311 L 501 297-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head10" fill="none"-->
+<!--        d= "-->
+<!--        M 493 311 L 501 298-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head11" fill="none"-->
+<!--        d= "-->
+<!--        M 481 269 Q 490 290 510 307-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head12" fill="none"-->
+<!--        d= "-->
+<!--        M 557 297 Q 510 267 510 307 C 530 260 505 240 514 231 L 492 243-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head13" fill="none"-->
+<!--        d= "-->
+<!--        M 478 216 Q 495 256 502 261 Q 470 273 445 264 Q 447 280 441 323 Q 420 290 431 315-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head14" fill="none"-->
+<!--        d= "-->
+<!--        M 447 265 C 455 310 465 310 494 312-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head20" fill="none"-->
+<!--        d= "-->
+<!--        M 546 334 C 535 374 550 465 600 462 C 550 490 490 450 475 361-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head21" fill="none"-->
+<!--        d= "-->
+<!--        M 494 419 Q 494 490 544 490 Q 520 510 465 476-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head22" fill="none"-->
+<!--        d= "-->
+<!--        M 368 627 C 290 654 290 560 376 541 Q 510 540 518 450-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head23" fill="none"-->
+<!--        d= "-->
+<!--        M 376 541 C 335 590 370 610 386 605 C 350 645 310 610 341 557-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head24" fill="none"-->
+<!--        d= "-->
+<!--        M 469 525 Q 480 525 509 510 L 496 525 Q 520 530 545 507 L 545 522 L 561 513 Q 561 488 568 489-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head25" fill="none"-->
+<!--        d= "-->
+<!--        M 666 538 C 605 565 560 500 568 479-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head26" fill="none"-->
+<!--        d= "-->
+<!--        M 561 471 L 593 503 Q 630 530 700 549 Q 710 555 779 483 C 810 440 790 405 816 371-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head27" fill="none"-->
+<!--        d= "-->
+<!--        M 770 495 Q 760 513 753 515 Q 765 515 789 489-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head28" fill="none"-->
+<!--        d= "-->
+<!--        M 791 466 Q 785 540 767 550 Q 734 557 723 552 Q 750 595 773 586 C 760 630 724 666 714 655-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head28" fill="none"-->
+<!--        d= "-->
+<!--        M 791 466 Q 785 540 767 550 Q 734 557 723 552 Q 750 595 773 586 C 760 630 724 666 714 655-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-head28" fill="none"-->
+<!--        d= "-->
+<!--        M 714 655 C 740 680 810 680 832 531 L 834 458 L 837 455 Q 845 480 880 490 L 873 466-->
+<!--        L 887 491 L 902 493 L 888 469 L 911 491 L 926 485 L 904 468 L 934 475 Q 950 450 943 438-->
+<!--        Q 900 475 853 434-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body1" fill="none"-->
+<!--        d= "-->
+<!--        M 563 512 L 522 575 L 528 575 L 420 695 C 400 710 436 800 415 893 T 382 1046 L 385 1079-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body2" fill="none"-->
+<!--        d= "-->
+<!--        M 674 541 L 669 551 L 660 556 L 655 572 L 660 556 Q 695 600 697 664 Q 700 680 710 678-->
+<!--        L 711 688 L 701 688 L 694 676 C 600 660 550 570 528 577-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body3" fill="none"-->
+<!--        d= "-->
+<!--        M 728 533 L 748 554-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body4" fill="none"-->
+<!--        d= "-->
+<!--        M 787 650 L 813 697 L 811 882 L 768 922 L 769 944 Q 840 1020 859 1080-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body5" fill="none"-->
+<!--        d= "-->
+<!--        M 583 1080 L 542 1040 L 493 983 C 490 970 510 965 535 984 L 552 1005 C 572 1035 600 985 653 1048-->
+<!--        L 638 1031 L 658 1036 T 670 1035 L 716 1060 Q 740 1012 753 1012 Q 763 979 782 987 L 775 1003-->
+<!--        L 768 1013 L 775 1003 Q 796 990 800 1004 L 764 1067 L 741 1080 L 736 1080 L 768 1015-->
+<!--        Q 765 1012 753 1012 Q 740 1012 716 1060 L 692 1080 L 702 1065 T 703 1057 T 655 1080-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body6" fill="none"-->
+<!--        d= "-->
+<!--        M 665 1037 L 658 1022 Q 590 1010 547 975 Q 476 960 416 991 Q 476 960 547 975 L 550 952-->
+<!--        L 538 932 L 534 836 T 540 797 T 528 712 Q 579 712 621 747 Q 630 700 623 648 Q 630 700 621 747-->
+<!--        C 690 790 690 934 750 938 Q 725 990 659 1022 Q 725 990 750 938 L 769 922 L 750 938 L 765 894-->
+<!--        L 758 859 Q 850 750 769 662-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-body7" fill="none"-->
+<!--        d= "-->
+<!--        M 694 548 Q 710 590 748 636 L 679 587-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-mouth" fill="none"-->
+<!--        d= "-->
+<!--        M 674 501 Q 701 508 723 496-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-eyelash1" fill="none"-->
+<!--        d= "-->
+<!--        M 582 427 Q 570 410 556 401 L 576 391 L 570 385 L 582 387 L 589 384 L 585 380 L 601 381-->
+<!--        Q 630 376 647 386 L 642 394 Q 597 385 577 406 Q 576 420 582 427 Z-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-eyelash2" fill="none"-->
+<!--        d= "-->
+<!--        M 791 404 L 809 374 L 799 372 L 803 367 L 789 368 L 789 359 L 784 365 Q 760 363 750 371-->
+<!--        Q 745 380 731 396 L 730 407 Q 752 363 794 383 Q 794 388 791 404 Z-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-eye1" fill="none"-->
+<!--        d= "-->
+<!--        M 582 402 A 25 32 -25 1 0 628 392-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-iris1" fill="none"-->
+<!--        d= "-->
+<!--        M 607 392 A 11 16 -10 1 0 608 392 Z-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-pupil1" fill="none"-->
+<!--        d= "-->
+<!--        M 609 400 A 4 7 8 1 0 610 400 Z-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-eye2" fill="none"-->
+<!--        d= "-->
+<!--        M 738 396 A 21 28 12 1 0 775 377-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-iris2" fill="none"-->
+<!--        d= "-->
+<!--        M 755 382 A 11 15 2 1 0 756 382 Z-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+<!--        <path id="lumine-pupil2" fill="none"-->
+<!--        d= "-->
+<!--        M 758 390 A 3 6 2 1 0 759 390 Z-->
+<!--        "-->
+<!--        stroke="#cfedca" stroke-width="1" stroke-dasharray="0" stroke-dashoffset="114514"-->
+<!--        />-->
+
+
 <div class="sakura"><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
@@ -400,7 +536,7 @@
     <div id = "contentArea">
         <div id = "mainContent">
             <section class="content left-align" id="section1">
-                <div class="background-image" style="background-image: url('img/bg/paul.jpg');"></div>
+                <div class="background-image" style="background-image: url('img/bg/1.jpg');"></div>
                 <div class="text-overlay">
                     <h2>关于我</h2>
                     <p>李乐平 | ✉: <a href="#" class="email" style="color: #cfedca; text-decoration: none;">li_leping@qq.com</a> | Github: <a href="https://github.com/Estraie" class="githubLink" style="color: #cfedca; text-decoration: none;">Estraie</a> | 天津市津南区同砚路38号</p>
