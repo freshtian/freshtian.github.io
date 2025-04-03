@@ -131,11 +131,11 @@
     100% { background-position: 0% 50%; }
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
+/*@keyframes pulse {*/
+/*    0% { transform: scale(1); }*/
+/*    50% { transform: scale(1.05); }*/
+/*    100% { transform: scale(1); }*/
+/*}*/
 
 .loader-content {
     position: absolute;
@@ -197,10 +197,10 @@ function createParticles() {
         }
 
         update() {
-            this.vy += this.gravity; // 添加重力
+            // this.vy += this.gravity; // 添加重力
             this.x += this.vx;
             this.y += this.vy;
-            this.alpha -= 0.008; // 减缓消失速度
+            // this.alpha -= 0.008; // 减缓消失速度
             if(this.alpha <= 0) this.reset();
         }
 
@@ -230,9 +230,9 @@ function createParticles() {
         ctx.drawImage(bgImage, 0, 0, width, height);
 
         // 添加背景模糊效果
-        ctx.filter = 'blur(2px)';
-        ctx.drawImage(bgImage, 0, 0, width, height);
-        ctx.filter = 'none';
+        // ctx.filter = 'blur(2px)';
+        // ctx.drawImage(bgImage, 0, 0, width, height);
+        // ctx.filter = 'none';
 
         // 绘制粒子
         particles.forEach(p => {
