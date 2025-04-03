@@ -46,51 +46,77 @@ body {
 
 header {
     cursor: default;
-	z-index: 10; 
-    background-color: rgba(250, 247, 247, 0.1); /*#3498db*/
-    /*color: #fff;*/
-    padding: 10px 0px;
+    z-index: 10;
+    background: rgba(245, 235, 220, 0.7); /* 淡黄色调背景 */
+    padding: 12px 0;
     position: fixed;
     width: 100%;
-    opacity: 1;
-    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
+    border-bottom: 1px solid rgba(40, 35, 35, 0.15); /* 复古分割线 */
+    font-family: 'Helvetica Neue', sans-serif;
+    transition: all 0.4s ease-in-out;
 }
 
+/* 滚动时效果 */
+header.scrolled {
+    background: rgba(245, 235, 220, 0.97);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* 按钮组 */
 .button-group {
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px; /* 按钮间距 */
 }
+
 
 button {
-    height: 100%;
-    font-family: 'HYWenHei-85W';
+    /* 基础形状 */
+    height: 45px;
+    min-width: 120px;
     border: none;
-    /* 渐变背景 */
-    background: linear-gradient(
-        135deg,
-        rgba(224, 86, 63, 0.1) 0%,
-        rgba(255, 36, 0, 0.3) 100%
-    );
-    color: #fff;
-    padding: 12px 25px;
+    border-radius: 25px;
+    padding: 12px 30px;
     position: relative;
-    z-index: 100;
-    margin: 0 25px;
+    margin: 0 15px;
+
+    /* 鲜艳配色方案 */
+    background: linear-gradient(
+        145deg,
+        #FFD700 0%,
+        #FF6B6B 50%,
+        #4ECDC4 100%
+    );
+
     /* 立体效果 */
-    border-radius: 10px;
     box-shadow:
-        0 4px 15px rgba(255, 36, 0, 0.3),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2);
-    /* 动画增强 */
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    /* 文字效果 */
-    text-transform: uppercase;
-    letter-spacing: 1px;
+        0 4px 15px rgba(255, 107, 107, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+
+    /* 字体设计 */
+    font-family: 'Avenir Next', sans-serif;
     font-weight: 600;
-    overflow: hidden; /* 用于伪元素溢出裁剪 */
+    color: #2D3436;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    /* 动态效果 */
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* 复古纹理 */
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 3px,
+            rgba(255,255,255,0.2) 3px,
+            rgba(255,255,255,0.2) 6px
+        ),
+        linear-gradient(145deg, #FFD700 0%, #FF6B6B 50%, #4ECDC4 100%);
 }
 
-/* 流光边框效果 */
+/* 彩色边框装饰 */
 button::before {
     content: '';
     position: absolute;
@@ -100,59 +126,60 @@ button::before {
     bottom: -2px;
     background: linear-gradient(
         45deg,
-        #ff0000,
-        #ff7300,
-        #fffb00,
-        #48ff00,
-        #00ffd5,
-        #002bff,
-        #7a00ff,
-        #ff00c8,
-        #ff0000
+        #FF6B6B,
+        #FFD700,
+        #4ECDC4
     );
-    background-size: 400%;
+    border-radius: 28px;
     z-index: -1;
-    filter: blur(8px);
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-/* 悬停交互效果 */
-button:hover {
-    transform: translateY(-3px);
-    box-shadow:
-        0 6px 20px rgba(255, 36, 0, 0.5),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3);
-}
-
-button:hover::before {
     opacity: 0.8;
 }
 
-/* 点击动画 */
-button:active {
-    transform: translateY(1px);
-    background: linear-gradient(
-        135deg,
-        rgba(224, 86, 63, 1) 0%,
-        rgba(255, 36, 0, 0.8) 100%
-    );
+/* 悬停动画 - 模拟唱片旋转 */
+button:hover {
+    transform: rotate(-3deg) scale(1.1);
     box-shadow:
-        0 2px 8px rgba(255, 36, 0, 0.3),
-        inset 0 3px 6px rgba(0, 0, 0, 0.2);
+        0 8px 25px rgba(255, 107, 107, 0.6),
+        inset 0 3px 6px rgba(255,255,255,0.4);
+    background-position: 100% 0;
 }
 
-/* 流光动画 */
-@keyframes gradientFlow {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+/* 点击效果 - 模拟黑胶唱片机按压 */
+button:active {
+    transform: rotate(1deg) scale(0.95);
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.3),
+        inset 0 4px 6px rgba(0,0,0,0.2);
 }
 
-/* 激活时的炫光效果 */
-button.active {
-    animation: gradientFlow 8s linear infinite;
+/* 动态波纹效果 */
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
 }
+
+button:hover::after {
+    width: 140%;
+    height: 140%;
+}
+
+/* 专辑封面风格的标签 */
+button span {
+    position: relative;
+    z-index: 2;
+    mix-blend-mode: multiply;
+}
+
+
+
 
 button:hover {
     background-color: rgba(234, 21, 21, 0.3)
@@ -234,17 +261,16 @@ footer {
 }
 
 .content {
-    z-index: auto;
-    position: relative;
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease; 
+    background: rgba(255,255,255,0.7); /* 柔光白背景 */
+    color: #4A4A4A; /* 中性灰色 */
+    padding: 2rem;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
 .background-image {
@@ -308,17 +334,44 @@ github-link:hover {
 }
 
 .sidebar {
-	z-index: -22; 
+    /* 定位调整 */
+    z-index: 20; /* 确保可见性 */
     position: fixed;
-    top: 20%;
-    left: 15%;
-    height: 65%;
-    width: 70%; 
-    background-color: rgb(28, 27, 27,0.3);
-    border-radius: 15px;
-    visibility: "visible";
-    opacity: 1;
-    /*transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;*/
+    top: 18%;
+    left: 12%;
+    height: 68%;
+    width: 76%;
+
+    /* 背景与边框 */
+    background: rgba(245, 235, 220, 0.5); /* 增强纸质质感 */
+    border: 1px solid #6d5c4d; /* 深咖啡色边框 */
+    border-radius: 8px; /* 更克制的圆角 */
+
+    /* 立体效果 */
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.1),
+        inset 0 1px 2px rgba(255,255,255,0.3);
+
+    /* 复古纹理 */
+    background-image:
+        linear-gradient(
+            rgba(109, 92, 77, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(109, 92, 77, 0.08) 1px,
+            transparent 1px
+        );
+    background-size: 20px 20px;
+
+    /* 动态效果 */
+    transition: all 0.4s ease-in-out;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #8b7866;
+    border-radius: 3px;
 }
 
 .left-align p {
