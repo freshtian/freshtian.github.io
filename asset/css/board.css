@@ -19,7 +19,7 @@
 }
 .line {
     position: absolute;
-    /*background-color: #cfedca;*/
+    background-color: #cfedca;
 }
 .line.horizontal {
     height: 1px;
@@ -60,7 +60,7 @@
     transform: translate(-50%, -50%);
 }
 .stone.black {
-    /*background-color: black;*/
+    background-color: black;
 }
 .stone.white {    
     background-color: white;
