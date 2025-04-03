@@ -56,19 +56,19 @@ header {
     transition: all 0.4s ease-in-out;
 }
 
-/* 滚动时效果 */
-header.scrolled {
-    background: rgba(245, 235, 220, 0.97);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+/*!* 滚动时效果 *!*/
+/*header.scrolled {*/
+/*    background: rgba(245, 235, 220, 0.97);*/
+/*    box-shadow: 0 2px 8px rgba(0,0,0,0.08);*/
+/*}*/
 
-/* 按钮组 */
-.button-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px; /* 按钮间距 */
-}
+/*!* 按钮组 *!*/
+/*.button-group {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    gap: 30px; !* 按钮间距 *!*/
+/*}*/
 
 
 button {

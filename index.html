@@ -101,13 +101,54 @@
     </svg>
 </div>
 <div id="loader">
-<!--    <p id="loading-text"></p>-->
     <canvas class="particles"></canvas>
     <div class="vortex"></div>
     <div class="loader-content">
         <div class="loading-text">LOVE ME DO</div>
     </div>
 </div>
+
+<style>
+.loading-text {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6c5ce7, #00b894);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite, pulse 1.5s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255,107,107,0.5),
+                 0 0 40px rgba(255,217,61,0.3),
+                 0 0 60px rgba(108,92,231,0.2);
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 4px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.loader-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 添加字体引入 */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@900&display=swap');
+</style>
 <script>
 // 添加粒子效果
 function createParticles() {
@@ -315,7 +356,7 @@ window.addEventListener('load', () => {
                 </div>
             </section>
             <section class="content left-align" id="section4">
-                <div class="background-image" style="background-image: url('img/bg/Queen.jpg');"></div>
+                <div class="background-image" style="background-image: url('img/bg/b10.JPG');"></div>
                 <div class="text-overlay">
                     <!-- Add content for section 4 -->
                 </div>
@@ -371,7 +412,7 @@ window.addEventListener('load', () => {
         </div>
         <div id = "galleryContent" style = "display:none;">
             <section class="content left-align" id="gallery_section1">
-                <div class="background-image" style="background-image: url('img/bg/Queen.jpg');"></div>
+                <div class="background-image" style="background-image: url('img/bg/b10.JPG');"></div>
                 <div class="text-overlay">
                     <h2>Sabzeruz Festival</h2>
                     <p>Oct. 27, 2024</p>
@@ -391,7 +432,8 @@ window.addEventListener('load', () => {
                 <div class="text-overlay">
                     <h2>Incandescent Ode of Resurrection</h2>
                     <p>Jan. 3, 2024</p>
-                    <p>「予夜以火，予光以歌。」</p>
+                    <p>「予夜以火，予光以歌。」</p></div>
+
 
             </section>
             <section class="content left-align" id="gallery_section_final">
@@ -437,7 +479,8 @@ window.addEventListener('load', () => {
     </div>
 
     <footer>
-        <p>For memories are like pearls - tossed about by wind and sand though they may be, their true, pure color shall never be changed.</p>
+        <p>Remember to let her into your heart.</p>
+        <p>Then you can start to mske it better,better ! better ! better ~ !</p>
     </footer>
 
     <script src="asset/js/script.js"></script>
