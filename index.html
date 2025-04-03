@@ -436,6 +436,29 @@ window.addEventListener('load', () => {
 
 
             </section>
+            <section class="content left-align" id="gallery_section">
+                <div class="background-image" style="background-image: url('img/bg/b8.jpg');"></div>
+                <div class="text-overlay" >
+                    <h2> README.md</h2>>
+                    <div class="scrollable-text" id="md-content">
+                    </div>
+                    <!-- MD内容将动态插入到这里 -->
+                </div>
+            </section>
+
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script>
+            // 读取本地MD文件
+            fetch('posts/README.md')
+                .then(response => response.text())
+                .then(md => {
+                    // 将Markdown转换为HTML
+                    const html = marked.parse(md);
+                    // 插入到指定容器
+                    document.getElementById('md-content').innerHTML = html;
+                })
+                .catch(err => console.error('MD加载失败:', err));
+            </script>
             <section class="content left-align" id="gallery_section_final">
                 <div class="background-image" style="background-image: url('img/bg/b6.png');"></div>
                 <div class="text-overlay">
