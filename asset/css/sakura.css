@@ -330,3 +330,14 @@
 	}
 }
 
+.nav-button {
+    background-color: transparent; /* 完全透明 */
+    border: 2px solid rgba(0, 0, 0, 0.2); /* 半透明边框 */
+    color: #333;
+    transition: all 0.3s ease;
+}
+.nav-button:hover {
+    border-color: rgba(0, 0, 0, 0.5); /* 悬停加深边框 */
+    background-color: rgba(255, 255, 255, 0.1); /* 微白悬停反馈 */
+}
+
