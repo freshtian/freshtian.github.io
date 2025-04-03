@@ -47,7 +47,7 @@ body {
 header {
     cursor: default;
 	z-index: 10; 
-    /*background-color: #0aec0a; !*#3498db*!*/
+    background-color: rgba(250, 247, 247, 0.1); /*#3498db*/
     /*color: #fff;*/
     padding: 10px 0px;
     position: fixed;
@@ -65,17 +65,97 @@ button {
     height: 100%;
     font-family: 'HYWenHei-85W';
     border: none;
-    /*background-color: #070709;*/
-    /*color: #fff;*/
-    padding: 10px 15px;
+    /* 渐变背景 */
+    background: linear-gradient(
+        135deg,
+        rgba(224, 86, 63, 0.1) 0%,
+        rgba(255, 36, 0, 0.3) 100%
+    );
+    color: #fff;
+    padding: 12px 25px;
     position: relative;
     z-index: 100;
-    margin: 0px 50px 0px 5px;
-    transition: background-color 0.8s ease, opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease; 
+    margin: 0 25px;
+    /* 立体效果 */
+    border-radius: 10px;
+    box-shadow:
+        0 4px 15px rgba(255, 36, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    /* 动画增强 */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* 文字效果 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    overflow: hidden; /* 用于伪元素溢出裁剪 */
+}
+
+/* 流光边框效果 */
+button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* 悬停交互效果 */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 20px rgba(255, 36, 0, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+button:hover::before {
+    opacity: 0.8;
+}
+
+/* 点击动画 */
+button:active {
+    transform: translateY(1px);
+    background: linear-gradient(
+        135deg,
+        rgba(224, 86, 63, 1) 0%,
+        rgba(255, 36, 0, 0.8) 100%
+    );
+    box-shadow:
+        0 2px 8px rgba(255, 36, 0, 0.3),
+        inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 流光动画 */
+@keyframes gradientFlow {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* 激活时的炫光效果 */
+button.active {
+    animation: gradientFlow 8s linear infinite;
 }
 
 button:hover {
-    /*background-color: #070709 !*#2980b9 *!*/
+    background-color: rgba(234, 21, 21, 0.3)
 }
 
 .music-button {
@@ -141,8 +221,8 @@ header h2, header p {
 
 footer {
 	z-index: 9;
-    /*background-color: #333;*/
-    /*color: #fff;*/
+    background-color: rgb(28, 27, 27,0.3);
+    color: #fff;
     text-align: center;
     cursor: default;
     position: fixed;
@@ -161,7 +241,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*color: #fff;*/
+    color: #fff;
     text-align: center;
     overflow: hidden;
     transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease; 
@@ -234,11 +314,11 @@ github-link:hover {
     left: 15%;
     height: 65%;
     width: 70%; 
-    /*background-color: rgba(0, 97, 27, 0.7); */
-    /* border-radius: 15px; 圆角半径 */
+    background-color: rgb(28, 27, 27,0.3);
+    border-radius: 15px;
     visibility: "visible";
     opacity: 1;
-    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
+    /*transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;*/
 }
 
 .left-align p {
@@ -255,7 +335,7 @@ github-link:hover {
 .dot {
     width: 10px;
     height: 10px;
-    /*background-color: #070709;*/
+    background-color: #070709;
     border-radius: 50%;
     position: fixed;
     z-index: 9999;

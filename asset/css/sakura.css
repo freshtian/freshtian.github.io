@@ -333,7 +333,7 @@
 .nav-button {
     background-color: transparent; /* 完全透明 */
     border: 2px solid rgba(0, 0, 0, 0.2); /* 半透明边框 */
-    color: #333;
+    color: #eae4e4;
     transition: all 0.3s ease;
 }
 .nav-button:hover {
