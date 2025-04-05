@@ -385,22 +385,20 @@ window.addEventListener('load', () => {
             <section class="content left-align" id="reminisce_section">
                 <div class="background-image" style="background-image: url('img/bg/11.jpg');"></div>
                 <div class="text-overlay">
-                    <h2>The Folio of Foliage</h2>
+                    <h2>pynogram</h2>
                     <div class="scrollable-text">
-                        <p>...I don't dare presume to mention her true name, let alone overstep my bounds as an earthly being to judge her divinity. I, Sunitha Cosamvi, a servant of shallow intellect, have merely recorded the stories heard from the sages who followed her in the past and nowhere else. These words are as true and evident as my own existence.</p>
-                        <p>When the moon's shadow shattered, hordes of beasts emerged from the deepest depths of the abyss and devoured living creatures by the thousands. Of those she created, none could escape their destined annihilation. The goodness, peace, and wisdom she had bestowed — all perished before this pure malice without exception. Under that sneering waning moon, the black tide of decay surged over the deserts and through the valleys, turning clear springs once interlaced with roses into puddles of filth, defiling the earth as mortals trembled with despair. The sages called it The Black Tide, for it was a dark flood that swallowed up fields, villages, and cities.</p>
-                        <p>She witnessed this all with her own eyes and wept bitterly for the sorrow and suffering of the living. Her tears fell to the ground, dispelling the foul flames and giving birth to blossoms abounding with sweet dew from the once barren and scorched earth. However, the root cause of the blight still lay beneath the earth, and the shadow of death continued to obscure the once luminous moonlight. Thus, she vowed to save the creatures of the earth, embarking on a final journey together with her followers.</p>
-                        
-                        <p>She followed the dappled light and shade until she entered a long-since ruined forest. With each step she took, a thousand Nilotpala Lotuses bloomed in her wake. Every calamity — raging fires, death, and destruction — all receded before the wonder of her wisdom. Fragrant flowers bloomed and proliferated again in this dead domain and remain as abundant today as the gravel in the Ardravi River. Even hurricanes abated into gentle exhalations before her singing, causing the bells on her lapels to sway as they rang out elegantly. All the spirits, their envoys, humans, and the inhuman rejoiced and praised her name, for she is indeed the most sagacious and the most merciful.</p>
-                        <p>In the depths of the forest, she collected grass to use as an instrument, picked flowers for a crown, and played a flawless tune with a Karrenay. In an instant, thousands of demonic troops were reduced to dust and scattered to the four winds, never to be found again. She gently brushed away the tears of the forest creatures and soothed their anguish, just as she once blew the wind of life across the barren sea of sand, like the emissary of an eternal oasis from time immemorial.</p>
-                        <p>But this land remained broken, its heart devoured by evil spirits and monsters who made it their dwelling — a cavern of the damned where neither sun, moon, nor fire shine. The dust they took for treasure and the sludge served as their delicacies, like birds clad in feathers but unable to soar in the skies. She decided that she would go to the dark cave and enter that evil place that none might depart, continuing on this path of no restitution, this sojourn of utmost purity and mercy.</p>
-                        <p>She stepped alone to that emptied earthly heart and softly touched its timeless face, becoming the immortal Gaokerena and the earth itself. Every thread of spiritual knowledge and every sweet-smelling plant is her undying will. Another flourishing sea of flowers rolled around her, jade in color, rosy in fragrance and dewy as heavenly raiment. The songs of a hundred birds surrounded her, praising the life that she had at last reclaimed, like a mortal trading their old clothes for fresh ones, casting off their original shackles, and ascending to the eternal temple.</p>
-                        
-                        <p>Many people had never before heard her voice, or if they had, they did not know it was her. Those who disseminate well because they hear words from far and wide are as rare as those who teach well because they understand the truth. Her will is all-pervading and as indestructible as intellect itself. None can destroy the indestructible, for there has never been an absence of existence in this world, nor the existence of absence.</p>
-                        <p>It must be known that the forest was once overrun by a black tide of beasts. The moonlight spilling over the still water was as shattered as the dream it reflected, and the endless labyrinth too collapsed in the burning flames. The lord of all animals let out a furious roar with its dying breath, then fell protecting all that she had entrusted to him. But the memories themselves did not shatter, collapse, nor fall. Like the wisdom she left behind, they were unborn, imperishable, eternal, and ancient.</p>
-                        <p>Following her guidance, the princess of the kingdom of dreams gently snapped off the white branches and rebuilt the verdant hunting grounds from the withered fallen leaves, while the children of the forest, having set forth their ambition, were able to sleep peacefully in the end once more. No matter how much they suffer, the hunter always finds their way home — This is the first and final promise she made to the children, and to the adults who were once children.</p>
-                        <p>Perhaps the moon dust scattered over the world will one day fade away like morning dew, but for those things that remain in memories — all those sweet dreams and thoughts — their purity will remain as unchanged as a pearl that even the grinding and whittling of a thousand winds and sands may not alter.</p>
-                        <p>Finis.</p>
+                        <p>2025年，4月。有同学给了我一个github网址，让我给他跑一下.这次经历给了我很多经验。这是一个8年前的项目，跑起来还是很费劲的</p>
+                        <p>首先就是阅读README.md，这个非常重要，不要一开始就着急配虚拟环境，先读README和看看requirements文件，有个整体的思路</p>
+                        <p>这个地址其实是一个python包，和一般的项目不一样，这也是我第一次弄，遂记录一下。README让我pip pynogram，但pip里面根本找不到这个包，然后我就去搜怎么才能安装这个包，这时候我才反应过来原来这个项目就是pynogram的源代码，直接pip install .就行</p>
+                        <p>然后我 pip install .,果不其然，报错了，显示了没有啥setup.py我根本不知道咋回事，因为我不知道一个python包需要哪些东西，反正方式就是很绝望。就在最绝望之际，一切皆有生机，我在这个项目github网页发现了8个月前，这个作者居然改动了下，commit上说</p>
+                        <p>他删除了setup.py还有一下别的，感觉他是摆烂了，8年来也没维护这个项目，但好像也没什么人用，最后把setup.py删掉，都用不了，然后我使用git checkout 哈希值，切回了之前的版本，果不其然，一切都回来了。于是我pip install .。不出所料，还是报错了，</p>
+                        <p>这个setup太古老了，很多东西现在已经没了，于是我查了些资料，给他改成了能用的，终于！安装成功了</p>
+                        <p>然后阅读README,查看一下用法，还有看看源码，对这个代码有点影响，然后中间有个参数得在linux系统上才能用，我试了试用wsl，但没能成功，用了虚拟环境，不知道为什么pip 命令用的不是虚拟环境里的那个，所以用不来安装的那个包的命令。然后下面还有个pynogram</p>
+                        <p>-web的功能，就是用自己的localhost来可视化解题过程。我跟着做了，果不其然，报错了。显示了啥啥啥，意思就是一个文件没了，虚拟环境里面安装的包少了部分东西，我直接在源码里找少的东西，填回去就好了。打开了网页，发现那个start按钮怎么点都没用，前端我也不</p>
+                        <P>会，这下又陷入了绝望的时刻，我就反复检查那个源码里面的html，css,js文件，虽然看不太懂，但pycharm给我标了几个报错的地方，就是那个语法过于古老，还有一些依赖包，给的是网址，现在已经失效了，我就一个个去找别的替代，下载回来，然后改了文件引用的那几句代</P>
+                        <P>码，就可以成功引用了。然后试了试，还是不行，我就去f12去看有没有什么报错，还真有，为什么我代码已经改了，但前端里面还没改，我突然就就意识到，我只在了源码里面改，安装的那个包还没有改，于是把虚拟环境里的都改了，这下终于成功了！</P>
+                        <P>每次跑别人的项目都是血与泪啊。十分甚至九分的消耗精力，并且别人的代码都看不太懂，整个过程就像小白误入大佬村，可怜又无助，并且非常好奇别人大佬是如何写出这么牛的项目的。悲，有朝一日能成为大佬就好了</P>
+
                     </div>
                 </div>
             </section>
@@ -411,35 +409,33 @@ window.addEventListener('load', () => {
             </section>
         </div>
         <div id = "galleryContent" style = "display:none;">
-            <section class="content left-align" id="gallery_section1">
-                <div class="background-image" style="background-image: url('img/bg/b10.JPG');"></div>
-                <div class="text-overlay">
-                    <h2>Sabzeruz Festival</h2>
-                    <p>Oct. 27, 2024</p>
-                    <p>"Though the memories of past nights have all but faded, we shall continue to sing songs of praise for the sweet dreams that have yet to unfold."</p>
-                </div>
-            </section>
-            <section class="content left-align" id="gallery_section2">
-                <div class="background-image" style="background-image: url('img/bg/b10.jpg');"></div>
-                <div class="text-overlay">
-                    <h2>New Year's Day</h2>
-                    <p>Jan. 1, 2025</p>
-                    <p>Went to Hong Kong and watched the spectacular fireworks with several friends, together with tens of thousands of people.</p>
-                </div>
-            </section>
+<!--            <section class="content left-align" id="gallery_section1">-->
+<!--                <div class="background-image" style="background-image: url('img/bg/b10.JPG');"></div>-->
+<!--                <div class="text-overlay">-->
+<!--                    <h2>Sabzeruz Festival</h2>-->
+<!--                    <p>Oct. 27, 2024</p>-->
+<!--                    <p>"Though the memories of past nights have all but faded, we shall continue to sing songs of praise for the sweet dreams that have yet to unfold."</p>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            <section class="content left-align" id="gallery_section2">-->
+<!--                <div class="background-image" style="background-image: url('img/bg/b10.jpg');"></div>-->
+<!--                <div class="text-overlay">-->
+<!--                    <h2>New Year's Day</h2>-->
+<!--                    <p>Jan. 1, 2025</p>-->
+<!--                    <p>Went to Hong Kong and watched the spectacular fireworks with several friends, together with tens of thousands of people.</p>-->
+<!--                </div>-->
+<!--            </section>-->
             <section class="content left-align" id="gallery_section3">
                 <div class="background-image" style="background-image: url('img/bg/b9.jpg');"></div>
                 <div class="text-overlay">
                     <h2>Incandescent Ode of Resurrection</h2>
                     <p>Jan. 3, 2024</p>
                     <p>「予夜以火，予光以歌。」</p></div>
-
-
             </section>
             <section class="content left-align" id="gallery_section">
                 <div class="background-image" style="background-image: url('img/bg/b8.jpg');"></div>
                 <div class="text-overlay" >
-                    <h2> README.md</h2>>
+                    <h2> README.md</h2>
                     <div class="scrollable-text" id="md-content">
                     </div>
                     <!-- MD内容将动态插入到这里 -->
