@@ -108,47 +108,7 @@
     </div>
 </div>
 
-<style>
-.loading-text {
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 900;
-    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6c5ce7, #00b894);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientShift 3s ease infinite, pulse 1.5s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(255,107,107,0.5),
-                 0 0 40px rgba(255,217,61,0.3),
-                 0 0 60px rgba(108,92,231,0.2);
-    position: relative;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 4px;
-}
 
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/*@keyframes pulse {*/
-/*    0% { transform: scale(1); }*/
-/*    50% { transform: scale(1.05); }*/
-/*    100% { transform: scale(1); }*/
-/*}*/
-
-.loader-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 添加字体引入 */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@900&display=swap');
-</style>
 <script>
 // 添加粒子效果
 function createParticles() {
@@ -271,7 +231,47 @@ window.addEventListener('load', () => {
     }, 2000);
 });
 </script>
+<style>
+.loading-text {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6c5ce7, #00b894);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite, pulse 1.5s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(255,107,107,0.5),
+                 0 0 40px rgba(255,217,61,0.3),
+                 0 0 60px rgba(108,92,231,0.2);
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 4px;
+}
 
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/*@keyframes pulse {*/
+/*    0% { transform: scale(1); }*/
+/*    50% { transform: scale(1.05); }*/
+/*    100% { transform: scale(1); }*/
+/*}*/
+
+.loader-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 添加字体引入 */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@900&display=swap');
+</style>
 
 
 <div class="sakura"><span></span><span></span><span></span><span></span>
@@ -393,7 +393,7 @@ window.addEventListener('load', () => {
                         <p>然后我 pip install .,果不其然，报错了，显示了没有啥setup.py我根本不知道咋回事，因为我不知道一个python包需要哪些东西，反正方式就是很绝望。就在最绝望之际，一切皆有生机，我在这个项目github网页发现了8个月前，这个作者居然改动了下，commit上说</p>
                         <p>他删除了setup.py还有一些别的，感觉他是摆烂了，8年来也没维护这个项目，但好像也没什么人用，最后把setup.py删掉，别人都用不了，然后我使用git checkout 哈希值，切回了之前的版本，果不其然，一切都回来了。于是我pip install .。不出所料，还是报错了，</p>
                         <p>这个setup太古老了，很多东西现在已经没了，于是我查了些资料，给他改成了能用的，终于！安装成功了</p>
-                        <p>     然后阅读README,查看一下用法，还有看看源码，对这个代码有点影响，然后中间有个参数得在linux系统上才能用，我试了试用wsl，但没能成功，用了虚拟环境，不知道为什么pip 命令用的不是虚拟环境里的那个，所以用不来安装的那个包的命令。然后下面还有个pynogram</p>
+                        <p>     然后阅读README,查看一下用法，还有看看源码，对这个代码有个整体的印象，然后中间有个参数得在linux系统上才能用，我试了试用wsl，但没能成功，用了虚拟环境，不知道为什么pip 命令用的不是虚拟环境里的那个，所以用不来安装的那个包的命令。然后下面还有个pynogram</p>
                         <p>-web的功能，就是用自己的localhost来可视化解题过程。我跟着做了，果不其然，报错了。显示了啥啥啥，意思就是一个文件没了，虚拟环境里面安装的包少了部分东西，我直接在源码里找少的东西，填回去就好了。打开了网页，发现那个start按钮怎么点都没用，前端我也不</p>
                         <P>会，这下又陷入了绝望的时刻，我就反复检查那个源码里面的html，css,js文件，虽然看不太懂，但pycharm给我标了几个报错的地方，就是那个语法过于古老，还有一些依赖包，给的是网址，现在已经失效了，我就一个个去找别的替代，下载回来，然后改了文件引用的那几句代</P>
                         <P>码，就可以成功引用了。然后试了试，还是不行，我就去f12去看有没有什么报错，还真有，为什么我代码已经改了，但前端里面还没改，我突然就就意识到，我只在了源码里面改，安装的那个包还没有改，于是把虚拟环境里的都改了，这下终于成功了！</P>
@@ -452,6 +452,29 @@ window.addEventListener('load', () => {
                     const html = marked.parse(md);
                     // 插入到指定容器
                     document.getElementById('md-content').innerHTML = html;
+                })
+                .catch(err => console.error('MD加载失败:', err));
+            </script>
+            <section class="content left-align" id="gallery_section2">
+                <div class="background-image" style="background-image: url('img/bg/b8.jpg');"></div>
+                <div class="text-overlay" >
+                    <h2> README.md</h2>
+                    <div class="scrollable-text" id="md-content2">
+                    </div>
+                    <!-- MD内容将动态插入到这里 -->
+                </div>
+            </section>
+
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script>
+            // 读取本地MD文件
+            fetch('posts/bigdata_pro/survival-analysis.md')
+                .then(response => response.text())
+                .then(md => {
+                    // 将Markdown转换为HTML
+                    const html = marked.parse(md);
+                    // 插入到指定容器
+                    document.getElementById('md-content2').innerHTML = html;
                 })
                 .catch(err => console.error('MD加载失败:', err));
             </script>
