@@ -61,12 +61,12 @@ function onDone(loaded) {
         path.style.strokeDasharray = 0;
     });
     
-    setTimeout(() => {
-        document.getElementById("loader").classList.add('fade-out');
-    }, cumulativeTime); 
-    setTimeout(() => {
-        document.getElementById("loader").style.display = "none";
-    }, cumulativeTime + 300); 
+    // setTimeout(() => {
+    //     document.getElementById("loader").classList.add('fade-out');
+    // }, cumulativeTime);
+    // setTimeout(() => {
+    //     document.getElementById("loader").style.display = "none";
+    // }, cumulativeTime + 300);
     // console.log("WebGL initialized");
 }
 
